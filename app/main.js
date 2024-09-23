@@ -11,28 +11,63 @@ const empresas = [
     },
     {
         "empresa": "Dellys",
-        "bloco": "G4",
+        "bloco": "G3",
         "imagem": "assets/dellys.avif"
     },
     {
         "empresa": "Seara",
-        "bloco": "G1",
+        "bloco": "G3",
         "imagem": "assets/seara.png"
     },
     {
         "empresa": "Red Bull",
-        "bloco": "G3",
+        "bloco": "G1",
         "imagem": "assets/red-bull.png"
     },
     {
         "empresa": "Bosch",
-        "bloco": "G4",
+        "bloco": "G1",
         "imagem": "assets/bosch.png"
     },
     {
         "empresa": "Petlove",
-        "bloco": "G3",
+        "bloco": "G1",
         "imagem": "assets/petlove.webp"
+    },
+    {
+        "empresa": "Magneti Marelli",
+        "bloco": "G3",
+        "imagem": "assets/magneti-marelli.png"
+    },
+    {
+        "empresa": "Wartsila",
+        "bloco": "G1",
+        "imagem": "assets/wartsila.webp"
+    },
+    {
+        "empresa": "Autometal",
+        "bloco": "G3",
+        "imagem": "assets/autometal.png"
+    },
+    {
+        "empresa": "Dominalog",
+        "bloco": "G1",
+        "imagem": "assets/dominalog.png"
+    },
+    {
+        "empresa": "AGV",
+        "bloco": "G1",
+        "imagem": "assets/agv.png"
+    },
+    {
+        "empresa": "Mobly",
+        "bloco": "G1",
+        "imagem": "assets/mobly.png"
+    },
+    {
+        "empresa": "Fobras",
+        "bloco": "G1",
+        "imagem": "assets/fobras.png"
     }
 ];
 

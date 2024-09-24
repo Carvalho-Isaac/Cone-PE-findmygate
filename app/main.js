@@ -6,32 +6,32 @@ const empresas = [
     },
     {
         "empresa": "Friboi",
-        "bloco": "G3",
+        "bloco": "G4",
         "imagem": "assets/friboi.png"
     },
     {
         "empresa": "Dellys",
-        "bloco": "G3",
+        "bloco": "G4",
         "imagem": "assets/dellys.avif"
     },
     {
         "empresa": "Seara",
-        "bloco": "G3",
+        "bloco": "G4",
         "imagem": "assets/seara.png"
     },
     {
         "empresa": "Red Bull",
-        "bloco": "G1",
+        "bloco": "G6",
         "imagem": "assets/red-bull.png"
     },
     {
         "empresa": "Bosch",
-        "bloco": "G1",
+        "bloco": "G6",
         "imagem": "assets/bosch.png"
     },
     {
         "empresa": "Petlove",
-        "bloco": "G1",
+        "bloco": "G5",
         "imagem": "assets/petlove.webp"
     },
     {
@@ -41,7 +41,7 @@ const empresas = [
     },
     {
         "empresa": "Wartsila",
-        "bloco": "G1",
+        "bloco": "G5",
         "imagem": "assets/wartsila.webp"
     },
     {
@@ -51,22 +51,22 @@ const empresas = [
     },
     {
         "empresa": "Dominalog",
-        "bloco": "G1",
+        "bloco": "G4",
         "imagem": "assets/dominalog.png"
     },
     {
         "empresa": "AGV",
-        "bloco": "G1",
+        "bloco": "G7",
         "imagem": "assets/agv.png"
     },
     {
         "empresa": "Mobly",
-        "bloco": "G1",
+        "bloco": "G7",
         "imagem": "assets/mobly.png"
     },
     {
         "empresa": "Fobras",
-        "bloco": "G1",
+        "bloco": "G6",
         "imagem": "assets/fobras.png"
     }
 ];
@@ -89,7 +89,7 @@ inputSearch.oninput = () => {
 function addHTML(item) {
     const li = document.createElement('li');
     const a = document.createElement('a');
-    a.href = item.bloco === "G1" ? "bloco_g1.html" : item.bloco === "G3" ? "bloco_g3.html" : "bloco_g4.html";
+    a.href = item.bloco === "G1" ? "plataforma_G1.html" : item.bloco === "G3" ? "plataforma_G3.html" : item.bloco === "G4" ? "plataforma_G4.html" : item.bloco === "G5" ? "plataforma_G5.html" : item.bloco === "G6" ? "plataforma_G6.html" : "plataforma_G7.html";
     a.className = 'content';
     
     const img = document.createElement('img');

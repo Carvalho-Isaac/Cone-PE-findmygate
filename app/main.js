@@ -134,6 +134,14 @@ function addHTML(item) {
     img.src = item.imagem;
     img.alt = item.empresa;
 
+    img.onerror = () => {
+        const span = document.createElement('span');
+        span.textContent = item.empresa;
+        span.className = 'fallback-span'; // Classe para estilização, se necessário
+        a.innerHTML = ""; // Limpa o conteúdo atual
+        a.appendChild(span); // Adiciona o span
+    };
+
     a.appendChild(img);
     li.appendChild(a);
     content.appendChild(li);

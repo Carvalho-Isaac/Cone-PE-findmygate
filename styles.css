@@ -33,6 +33,7 @@ body {
     width: 100%;
     height: auto;
     aspect-ratio: 16:9;
+    
 }
 
 .search {
@@ -96,8 +97,11 @@ a {
 .empresas a img {
     height: var(--size-high-tab);
     max-width: 100%;
-    font-size: 25px;
+}
+
+.empresas a span{
     line-height: var(--size-high-tab);
+    font-size: 25px;
 }
 
 .blocos {

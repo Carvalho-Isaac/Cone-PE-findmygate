@@ -1,5 +1,6 @@
 * {
     --primary-yellow: #ea8501;
+    --orange: #d13d00;
     --primary-gray: #3f3932;
     --primary-white: #e4e4e4;
 
@@ -126,4 +127,35 @@ video::-webkit-media-controls {
 video::-webkit-media-controls-enclosure {
     display: none;
     /* Remove controles no Chrome/Safari */
+}
+
+.link-btn-back{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 140px;
+    height: 48px;
+    
+}
+
+.btn-back{
+    padding: 12px 20px;
+    background: linear-gradient(to bottom, var(--primary-yellow), var(--orange));
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.btn-back span{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    color: var(--primary-white);
+    justify-content: center;
+    text-align: center;
+}
+
+.btn-back span svg{
+    fill: var(--primary-white);
 }

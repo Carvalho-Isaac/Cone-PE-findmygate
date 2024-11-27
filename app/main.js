@@ -119,7 +119,7 @@ function addHTML(item) {
         item.bloco === "PP2-G4" ? "plataforma_G1.html":
         item.bloco === "MM1-G5" ? "plataforma_G1.html":
         item.bloco === "PP2-G5-G6" ? "plataforma_G1.html":
-        item.bloco === "MM1-G6" ? "plataforma_G1.html":
+        item.bloco === "MM1-G6" ? "plataforma-MM1-G6.html":
         item.bloco === "MM1-G7" ? "plataforma_G1.html":
         item.bloco === "MM1-G8" ? "plataforma_G1.html":
         item.bloco === "MM1-G9" ? "plataforma_G1.html":

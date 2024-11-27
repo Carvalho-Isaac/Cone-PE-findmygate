@@ -125,3 +125,8 @@ a {
 video::-webkit-media-controls {
     display: none !important;
 }
+
+video::-webkit-media-controls-enclosure {
+    display: none;
+    /* Remove controles no Chrome/Safari */
+}

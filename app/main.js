@@ -155,3 +155,29 @@ function renderItems(items) {
 
 // Carrega os dados ao inicializar
 carregarDados();
+
+// ----------------  CONTAGEM DE EMPRESAS QUE FALTAM A LOGO ----------------
+
+// Função para contar e listar os spans
+function logSpans() {
+    const spans = document.querySelectorAll('span');
+    console.log(`Quantidade de spans: ${spans.length}`);
+    const spanContents = Array.from(spans).map(span => span.textContent);
+    console.log('Conteúdo dos spans:', spanContents);
+}
+
+// Configura um MutationObserver para monitorar mudanças no DOM
+const observer = new MutationObserver((mutationsList, observer) => {
+    // Executa apenas na primeira alteração e depois para o observer
+    logSpans();
+    observer.disconnect(); // Para o observer após a primeira execução
+});
+
+// Inicia o observer observando o corpo da página
+observer.observe(document.body, { childList: true, subtree: true });
+
+// Executa a função inicial após uma pequena espera para garantir que o DOM já tenha sido manipulado
+setTimeout(() => {
+    logSpans();
+    observer.disconnect(); // Para o observer caso o timeout ocorra antes de qualquer alteração
+}, 1000);

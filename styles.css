@@ -119,7 +119,7 @@ a {
 }
 
 .videos {
-    height: 100vh;
+    height: 100dvh;
 }
 
 video::-webkit-media-controls {

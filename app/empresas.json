@@ -63,6 +63,6 @@
     { "empresa": "Via Varejo", "bloco": "MM2-G1", "imagem": "" },
     { "empresa": "Vibra", "bloco": "MM1-CF2", "imagem": "assets/vibra.png" },
     { "empresa": "Vibra", "bloco": "MM2-PA", "imagem": "assets/vibra.png" },
-    { "empresa": "Wartsila", "bloco": "MM1-G5", "imagem": "assets/wartsila.webp" },
+    { "empresa": "Wartsila", "bloco": "MM1-G5", "imagem": "assets/wartsila.png" },
     { "empresa": "WMG Rodas - Lagoa", "bloco": "PP2-G3", "imagem": "" }
 ]

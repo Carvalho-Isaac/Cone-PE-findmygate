@@ -1,76 +1,3 @@
-// const empresas = [
-//     {
-//         "empresa": "Mercado Livre",
-//         "bloco": "G1",
-//         "imagem": "assets/mercado-livre.png"
-//     },
-//     {
-//         "empresa": "Friboi",
-//         "bloco": "G4",
-//         "imagem": "assets/friboi.png"
-//     },
-//     {
-//         "empresa": "Dellys",
-//         "bloco": "G4",
-//         "imagem": "assets/dellys.avif"
-//     },
-//     {
-//         "empresa": "Seara",
-//         "bloco": "G4",
-//         "imagem": "assets/seara.png"
-//     },
-//     {
-//         "empresa": "Red Bull",
-//         "bloco": "G6",
-//         "imagem": "assets/red-bull.png"
-//     },
-//     {
-//         "empresa": "Bosch",
-//         "bloco": "G6",
-//         "imagem": "assets/bosch.png"
-//     },
-//     {
-//         "empresa": "Petlove",
-//         "bloco": "G5",
-//         "imagem": "assets/petlove.webp"
-//     },
-//     {
-//         "empresa": "Magneti Marelli",
-//         "bloco": "G3",
-//         "imagem": "assets/magneti-marelli.png"
-//     },
-//     {
-//         "empresa": "Wartsila",
-//         "bloco": "G5",
-//         "imagem": "assets/wartsila.webp"
-//     },
-//     {
-//         "empresa": "Autometal",
-//         "bloco": "G3",
-//         "imagem": "assets/autometal.png"
-//     },
-//     {
-//         "empresa": "Dominalog",
-//         "bloco": "G4",
-//         "imagem": "assets/dominalog.png"
-//     },
-//     {
-//         "empresa": "AGV",
-//         "bloco": "G7",
-//         "imagem": "assets/agv.png"
-//     },
-//     {
-//         "empresa": "Mobly",
-//         "bloco": "G7",
-//         "imagem": "assets/mobly.png"
-//     },
-//     {
-//         "empresa": "Fobras",
-//         "bloco": "G6",
-//         "imagem": "assets/fobras.png"
-//     }
-// ];
-
 const content = document.querySelector(".tab-empresas ul");
 const inputSearch = document.getElementById("txtBusca");
 
@@ -89,12 +16,18 @@ async function carregarDados() {
     }
 }
 
-// Filtragem dos resultados ao digitar
 inputSearch.oninput = () => {
-    const filtro = inputSearch.value.toLowerCase();
+    let filtro = inputSearch.value.toLowerCase();
+    
+    filtro = filtro.replace(/\s+/g, '-');
+    filtro = filtro.replace(/\./g, '');
+    filtro = filtro.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
     const itensFiltrados = itens.filter(item =>
-        item.empresa.toLowerCase().includes(filtro)
+        item.empresa.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(filtro) ||  // Pesquisa no nome da empresa
+        item.bloco.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(filtro)    // Pesquisa no bloco
     );
+    
     renderItems(itensFiltrados);
 };
 

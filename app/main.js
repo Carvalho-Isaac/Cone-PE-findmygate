@@ -163,7 +163,7 @@ function logSpans() {
     const spans = document.querySelectorAll('span');
     console.log(`Quantidade de spans: ${spans.length}`);
     const spanContents = Array.from(spans).map(span => span.textContent);
-    console.log('Conteúdo dos spans:', spanContents);
+    console.log('Lista de empresas sem logo:', spanContents);
 }
 
 // Configura um MutationObserver para monitorar mudanças no DOM

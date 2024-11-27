@@ -60,7 +60,7 @@
     { "empresa": "União Multimodal", "bloco": "MM1-CF1", "imagem": "" },
     { "empresa": "Unitrading", "bloco": "MM1-G4", "imagem": "" },
     { "empresa": "Universal Transportes", "bloco": "PP2-G5/G6", "imagem": "" },
-    { "empresa": "Via Varejo", "bloco": "MM2-G1", "imagem": "" },
+    { "empresa": "Via Varejo", "bloco": "MM2-G1", "imagem": "assets/via-varejo.png" },
     { "empresa": "Vibra", "bloco": "MM1-CF2", "imagem": "assets/vibra.png" },
     { "empresa": "Vibra", "bloco": "MM2-PA", "imagem": "assets/vibra.png" },
     { "empresa": "Wartsila", "bloco": "MM1-G5", "imagem": "assets/wartsila.png" },

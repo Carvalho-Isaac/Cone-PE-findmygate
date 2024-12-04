@@ -40,13 +40,13 @@ function addHTML(item) {
     a.href =
         item.bloco === "MM1-CF1" ? "plataforma_G1.html":
         item.bloco === "MM1-CF2" ? "plataforma_G1.html":
-        item.bloco === "MM2-G1" ? "plataforma_G1.html":
+        item.bloco === "MM2-G1" ? "plataforma-MM2-G1.html":
         item.bloco === "MM1-G2" ? "plataforma-MM1-G2.html":
         item.bloco === "PP2-G2" ? "plataforma_G1.html":
         item.bloco === "MM1-G3" ? "plataforma-MM1-G3.html":
         item.bloco === "PP2-G3" ? "plataforma_G1.html":
         item.bloco === "PP4-G3" ? "plataforma_G1.html":
-        item.bloco === "MM2-G3" ? "plataforma_G1.html":
+        item.bloco === "MM2-G3" ? "plataforma-MM2-G3.html":
         item.bloco === "PP2-G3-G4" ? "plataforma_G1.html":
         item.bloco === "MM1-G4" ? "plataforma-MM1-G4.html":
         item.bloco === "PP2-G4" ? "plataforma_G1.html":

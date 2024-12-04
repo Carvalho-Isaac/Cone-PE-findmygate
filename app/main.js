@@ -25,7 +25,8 @@ inputSearch.oninput = () => {
 
     const itensFiltrados = itens.filter(item =>
         item.empresa.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(filtro) ||  // Pesquisa no nome da empresa
-        item.bloco.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(filtro)    // Pesquisa no bloco
+        item.bloco.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(filtro) ||   // Pesquisa no bloco
+        item.portaria.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(filtro)
     );
     
     renderItems(itensFiltrados);

@@ -39,29 +39,28 @@ function addHTML(item) {
 
     const a = document.createElement('a');
     a.href =
-        item.bloco === "MM1-CF1" ? "plataforma_G1.html":
-        item.bloco === "MM1-CF2" ? "plataforma_G1.html":
+        item.bloco === "MM1-CF1" ? "index.html":
+        item.bloco === "MM1-CF2" ? "index.html":
         item.bloco === "MM2-G1" ? "plataforma-MM2-G1.html":
         item.bloco === "MM1-G2" ? "plataforma-MM1-G2.html":
-        item.bloco === "PP2-G2" ? "plataforma_G1.html":
+        item.bloco === "PP2-G2" ? "index.html":
         item.bloco === "MM1-G3" ? "plataforma-MM1-G3.html":
-        item.bloco === "PP2-G3" ? "plataforma_G1.html":
-        item.bloco === "PP4-G3" ? "plataforma_G1.html":
+        item.bloco === "PP2-G3" ? "index.html":
+        item.bloco === "PP4-G3" ? "index.html":
         item.bloco === "MM2-G3" ? "plataforma-MM2-G3.html":
-        item.bloco === "PP2-G3-G4" ? "plataforma_G1.html":
+        item.bloco === "PP2-G3-G4" ? "index.html":
         item.bloco === "MM1-G4" ? "plataforma-MM1-G4.html":
-        item.bloco === "PP2-G4" ? "plataforma_G1.html":
+        item.bloco === "PP2-G4" ? "index.html":
         item.bloco === "MM1-G5" ? "plataforma-MM1-G5.html":
-        item.bloco === "PP2-G5-G6" ? "plataforma_G1.html":
+        item.bloco === "PP2-G5-G6" ? "index.html":
         item.bloco === "MM1-G6" ? "plataforma-MM1-G6.html":
         item.bloco === "MM1-G7" ? "plataforma-MM1-G7.html":
         item.bloco === "MM1-G8" ? "plataforma-MM1-G8.html":
         item.bloco === "MM1-G9" ? "plataforma-MM1-G9.html":
-        item.bloco === "MM1-G10" ? "plataforma_G1.html":
-        item.bloco === "MM1-G11" ? "plataforma_G1.html":
-        // item.bloco === "MM1-G6" ? "plataforma_G1.html":
-        item.bloco === "MM2-PA" ? "plataforma_G1.html":
-                            "plataforma_G7.html";
+        item.bloco === "MM1-G10" ? "index.html":
+        item.bloco === "MM1-G11" ? "index.html":
+        item.bloco === "MM2-PA" ? "index.html":
+                            "index.html";
     a.className = 'content';
 
     const img = document.createElement('img');

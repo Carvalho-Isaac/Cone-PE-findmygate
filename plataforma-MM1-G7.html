@@ -33,6 +33,19 @@
     </div>
 
     <script src="app/video.js"></script>
+
+    <script>
+        // Verifica a URL para encontrar o parâmetro mapa=false
+        const urlParams = new URLSearchParams(window.location.search);
+        const directQR = urlParams.get('direct');
+
+        // Exibe o alerta "Mapa ainda não adicionado" se o parâmetro for 'false'
+        if (directQR === 'false') {
+            document.querySelector('.link-btn-back').style.display = 'block';
+        } else {
+            document.querySelector('.link-btn-back').style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>

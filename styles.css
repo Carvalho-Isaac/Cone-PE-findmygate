@@ -130,6 +130,8 @@ video::-webkit-media-controls-enclosure {
 }
 
 .link-btn-back{
+    display: none;
+
     position: absolute;
     right: 10px;
     top: 10px;

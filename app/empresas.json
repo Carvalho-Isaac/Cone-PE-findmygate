@@ -17,7 +17,7 @@
     { "empresa": "Contatto", "bloco": "MM1-CF1", "portaria": "", "imagem": "" },
     { "empresa": "De Santa", "bloco": "MM1-G7", "portaria": "portaria-E", "imagem": "" },
     { "empresa": "Dominalog", "bloco": "PP2-G4", "portaria": "", "imagem": "assets/dominalog.png" },
-    { "empresa": "Duratex", "bloco": "PP2-G2", "portaria": "", "imagem": "assets/duratex.png" },
+    { "empresa": "Duratex", "bloco": "PP2-G2", "portaria": "", "imagem": "assets/duratex.svg" },
     { "empresa": "Eco Brasil", "bloco": "MM1-CF1", "portaria": "", "imagem": "" },
     { "empresa": "ELFA", "bloco": "PP2-G4", "portaria": "", "imagem": "" },
     { "empresa": "Elo log", "bloco": "MM1-G6", "portaria": "portaria-C", "imagem": "assets/elo-log.png" },

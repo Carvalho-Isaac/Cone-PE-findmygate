@@ -129,18 +129,28 @@ video::-webkit-media-controls-enclosure {
     /* Remove controles no Chrome/Safari */
 }
 
-.link-btn-back{
-    display: none;
+.container-btn {
+    display: flex;
+    position: absolute;
 
     position: absolute;
     right: 10px;
     top: 10px;
-    width: 140px;
-    height: 48px;
-    
+    gap: 10px;
 }
 
-.btn-back{
+.link-btn-back {
+    display: none;
+    height: 48px;
+
+}
+
+.link-btn-qr {
+    display: flex;
+    height: 48px;
+}
+
+.btn-back {
     padding: 12px 20px;
     background: linear-gradient(to bottom, var(--primary-yellow), var(--orange));
     align-items: center;
@@ -149,7 +159,7 @@ video::-webkit-media-controls-enclosure {
     border-radius: 3px;
 }
 
-.btn-back span{
+.btn-back span {
     display: flex;
     flex-direction: row;
     gap: 5px;
@@ -158,6 +168,6 @@ video::-webkit-media-controls-enclosure {
     text-align: center;
 }
 
-.btn-back span svg{
+.btn-back span svg {
     fill: var(--primary-white);
 }

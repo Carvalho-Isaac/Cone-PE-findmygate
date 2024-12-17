@@ -32,16 +32,19 @@
     <script src="app/main.js"></script>
 
     <script>
-        // Verifica a URL para encontrar o parâmetro mapa=false
+    document.addEventListener('DOMContentLoaded', function () {
         const urlParams = new URLSearchParams(window.location.search);
         const mapaAdicionado = urlParams.get('mapa');
 
-        // Exibe o alerta "Mapa ainda não adicionado" se o parâmetro for 'false'
         if (mapaAdicionado === 'false') {
             alert('Mapa ainda não adicionado');
         } else {
-            document.getElementById('mapaContainer').style.display = 'block';
+            const mapaContainer = document.getElementById('mapaContainer');
+            if (mapaContainer) {
+                mapaContainer.style.display = 'block';
+            }
         }
+    });
     </script>
 
 </body>

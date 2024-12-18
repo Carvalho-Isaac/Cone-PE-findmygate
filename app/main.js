@@ -94,7 +94,6 @@ carregarDados();
 // Função para contar e listar os spans
 function logSpans() {
     const spans = document.querySelectorAll('span');
-    console.log(`Quantidade de spans: ${spans.length}`);
     const spanContents = Array.from(spans).map(span => span.textContent);
     console.log('Lista de empresas sem logo:', spanContents);
 }
@@ -114,3 +113,25 @@ setTimeout(() => {
     logSpans();
     observer.disconnect(); // Para o observer caso o timeout ocorra antes de qualquer alteração
 }, 1000);
+
+
+
+function logEmpresasSemMapa() {
+    // Lista de blocos associados a "index.html?mapa=false"
+    const blocosSemMapa = [
+        "MM1-CF1", "MM1-CF2", "PP2-G2", "PP2-G3", "PP4-G3", "PP2-G3-G4", 
+        "PP2-G4", "PP2-G5-G6", "MM1-G10", "MM1-G11", "MM2-PA"
+    ];
+
+    // Filtra as empresas sem mapa
+    const empresasSemMapa = itens.filter(item => blocosSemMapa.includes(item.bloco));
+    
+    // Cria uma lista com os nomes e blocos das empresas
+    const detalhesEmpresas = empresasSemMapa.map(item => `${item.bloco} : ${item.empresa}`);
+
+    // Exibe a contagem e a lista no console
+    console.log('Lista de empresas sem mapa:', detalhesEmpresas);
+}
+
+// Chama a função após carregar os dados
+carregarDados().then(() => logEmpresasSemMapa());

@@ -40,7 +40,7 @@
     { "empresa": "Nissan", "bloco": "MM1-G4", "portaria": "portaria-B", "imagem": "assets/nissan.png" },
     { "empresa": "Paíto Imports", "bloco": "MM1-G5", "portaria": "portaria-B", "imagem": "assets/paito-imports.png" },
     { "empresa": "Petlove", "bloco": "MM1-G5", "portaria": "portaria-B", "imagem": "assets/petlove.webp" },
-    { "empresa": "Pioreiro", "bloco": "MM1-CF2", "portaria": "", "imagem": "" },
+    { "empresa": "Pioreiro", "bloco": "MM1-CF2", "portaria": "", "imagem": "assets/pioneiro.png" },
     { "empresa": "Prefeitura Cabo de Santo Agostinho", "bloco": "MM1-G7", "portaria": "portaria-E", "imagem": "assets/prefeitura-cabo.svg" },
     { "empresa": "Prefeitura Cabo de Santo Agostinho", "bloco": "MM1-G11", "portaria": "", "imagem": "assets/prefeitura-cabo.svg" },
     { "empresa": "Premier Transportes LTDA", "bloco": "MM1-G7-G11", "portaria": "", "imagem": "" },

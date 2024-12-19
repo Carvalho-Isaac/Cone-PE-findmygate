@@ -46,7 +46,7 @@
     { "empresa": "Premier Transportes LTDA", "bloco": "MM1-G7-G11", "portaria": "", "imagem": "" },
     { "empresa": "Prodelog", "bloco": "MM1-CF2", "portaria": "", "imagem": "" },
     { "empresa": "Redbull (Forte Log)", "bloco": "MM1-G6", "portaria": "portaria-C", "imagem": "assets/forte-log.png" },
-    { "empresa": "Rod Transportes", "bloco": "MM1-CF2", "portaria": "", "imagem": "" },
+    { "empresa": "Rod Transportes", "bloco": "MM1-CF2", "portaria": "", "imagem": "assets/rod.png" },
     { "empresa": "ROTRANS", "bloco": "MM1-CF2", "portaria": "", "imagem": "assets/rotrans.png" },
     { "empresa": "Sapore", "bloco": "PP2-G3/G4", "portaria": "", "imagem": "assets/sapore.png" },
     { "empresa": "Seara", "bloco": "MM1-CF2", "portaria": "", "imagem": "assets/seara.png" },

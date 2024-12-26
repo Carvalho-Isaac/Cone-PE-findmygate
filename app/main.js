@@ -124,3 +124,6 @@ function logEmpresasSemMapa() {
 
 // Chama a função após carregar os dados
 carregarDados().then(() => logEmpresasSemMapa());
+
+
+// 

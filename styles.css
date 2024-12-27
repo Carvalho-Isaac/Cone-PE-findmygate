@@ -184,12 +184,13 @@ video::-webkit-media-controls-enclosure {
 
 #overlay-qr{
     background-color: #e4e4e4d5;
-    width: 300px;
-    height: 375px;
+    width: calc(100dvw - 80px);
+    max-width: 432px;
     position: absolute;
-    inset: 125px 40px;
+    top: 150px;
     border-radius: 3px;
     text-align: center;
+    padding: 40px;
 
     display: none;
 }
@@ -202,6 +203,6 @@ video::-webkit-media-controls-enclosure {
     color: white;
 }
 
-.qr-generate:active > .overlay-qr{
-    display: block;
+#qr-generate:hover{
+    cursor: pointer;
 }

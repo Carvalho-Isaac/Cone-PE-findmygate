@@ -78,6 +78,8 @@ function renderItems(items) {
 // Carrega os dados ao inicializar
 carregarDados();
 
+
+
 // ----------------  CONTAGEM DE EMPRESAS QUE FALTAM A LOGO ----------------
 
 // Função para contar e listar os spans

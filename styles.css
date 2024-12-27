@@ -160,6 +160,8 @@ video::-webkit-media-controls-enclosure {
     justify-content: center;
     text-align: center;
     border-radius: 3px;
+    height: 23px;
+
 }
 
 .btn-back span {
@@ -173,4 +175,33 @@ video::-webkit-media-controls-enclosure {
 
 .btn-back span svg {
     fill: var(--primary-white);
+}
+
+#qr-generate{
+    border: none; /* Remove a borda */
+    outline: none; /* Remove a borda de foco padrão */
+}
+
+#overlay-qr{
+    background-color: #e4e4e4d5;
+    width: 300px;
+    height: 375px;
+    position: absolute;
+    inset: 125px 40px;
+    border-radius: 3px;
+    text-align: center;
+
+    display: none;
+}
+
+.qr-code-img{
+    margin-bottom: 20px;
+}
+
+.btn-download{
+    color: white;
+}
+
+.qr-generate:active > .overlay-qr{
+    display: block;
 }

@@ -178,29 +178,31 @@ video::-webkit-media-controls-enclosure {
 }
 
 #qr-generate{
-    border: none; /* Remove a borda */
-    outline: none; /* Remove a borda de foco padrão */
+    border: none;
+    outline: none;
 }
 
 #overlay-qr{
     background-color: #e4e4e4d5;
-    width: calc(100dvw - 80px);
+    width: calc(100vw - 20%);
     max-width: 432px;
     position: absolute;
     top: 150px;
     border-radius: 3px;
     text-align: center;
-    padding: 40px;
+    padding: 10%;
 
     display: none;
 }
 
 .qr-code-img{
     margin-bottom: 20px;
+    width: 80%;
 }
 
 .btn-download{
     color: white;
+    text-wrap: nowrap;
 }
 
 #qr-generate:hover{

@@ -1,4 +1,7 @@
 [
+    { "empresa": "ADM - Condomínio", "bloco": "", "portaria": "", "imagem": "" },
+    { "empresa": "ADM - CONE", "bloco": "MM1-G4", "portaria": "", "imagem": "" },
+    { "empresa": "Restaurante", "bloco": "MM1-G8", "portaria": "portaria-D", "imagem": "" },
     { "empresa": "APG", "bloco": "MM1-G8", "portaria": "portaria-D", "imagem": "assets/logos/apg.webp" },
     { "empresa": "Agemar", "bloco": "MM1-G6", "portaria": "portaria-C", "imagem": "assets/logos/agemar.webp" },
     { "empresa": "AGV", "bloco": "MM1-G7", "portaria": "portaria-E", "imagem": "assets/logos/agv.webp" },

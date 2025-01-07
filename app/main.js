@@ -1,16 +1,17 @@
 const content = document.querySelector(".tab-empresas ul");
 const inputSearch = document.getElementById("txtBusca");
 
-let empresas = []; // Inicializa como array vazio
-let itens = []; // Inicializa como array vazio
+let empresas = [];
+let itens = [];
 
 // Função para carregar os dados do JSON
 async function carregarDados() {
     try {
         const resposta = await fetch('./app/empresas.json');
         empresas = await resposta.json();
-        itens = empresas; // Atualiza `itens` com os dados carregados
-        renderItems(itens); // Renderiza os itens ao carregar os dados
+        itens = empresas;
+        renderItems(itens); // Renderiza os itens e executa logSpans internamente
+        logEmpresasSemMapa(); // Lista empresas sem mapa após carregar os dados
     } catch (erro) {
         console.error("Erro ao carregar o JSON:", erro);
     }
@@ -18,17 +19,31 @@ async function carregarDados() {
 
 inputSearch.oninput = () => {
     let filtro = inputSearch.value.toLowerCase();
-    
-    filtro = filtro.replace(/\s+/g, '-');
-    filtro = filtro.replace(/\./g, '');
+
+    // Remove espaços, pontos e acentos
+    filtro = filtro.replace(/\s+/g, '-').replace(/\./g, '');
     filtro = filtro.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-    const itensFiltrados = itens.filter(item =>
-        item.empresa.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(filtro) ||  // Pesquisa no nome da empresa
-        item.bloco.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(filtro) ||   // Pesquisa no bloco
-        item.portaria.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(filtro)
-    );
-    
+    const regex = new RegExp(filtro.replace(/-/g, '[- ]'), 'i'); // Permite hífen ou espaço
+
+    const itensFiltrados = itens.filter(item => {
+        const nomeEmpresa = item.empresa.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+        const bloco = item.bloco.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+        const plataforma = item.plataforma.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+        const portaria = item.portaria
+            ? item.portaria.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+            : ""; // Verifica se `portaria` existe e, se não, usa string vazia.
+        const blocoPlataforma = `${bloco}-${plataforma}`;
+
+        return (
+            regex.test(nomeEmpresa) || // Pesquisa no nome da empresa
+            regex.test(bloco) || // Pesquisa no bloco
+            regex.test(plataforma) || // Pesquisa na plataforma
+            regex.test(portaria) || // Pesquisa na portaria
+            regex.test(blocoPlataforma) // Pesquisa no bloco e plataforma combinados
+        );
+    });
+
     renderItems(itensFiltrados);
 };
 
@@ -38,18 +53,24 @@ function addHTML(item) {
     li.className = 'empresas';
 
     const a = document.createElement('a');
-    a.href =
-    item.bloco === "MM1-G2" ? "MM1-G2.html?direct=false" :
-    item.bloco === "MM1-G3" ? "MM1-G3.html?direct=false" :
-    item.bloco === "MM1-G4" ? "MM1-G4.html?direct=false" :
-    item.bloco === "MM1-G5" ? "MM1-G5.html?direct=false" :
-    item.bloco === "MM1-G6" ? "MM1-G6.html?direct=false" :
-    item.bloco === "MM1-G7" ? "MM1-G7.html?direct=false" :
-    item.bloco === "MM1-G8" ? "MM1-G8.html?direct=false" :
-    item.bloco === "MM1-G9" ? "MM1-G9.html?direct=false" :
-    item.bloco === "MM2-G1" ? "MM2-G1.html?direct=false" :
-    item.bloco === "MM2-G3" ? "MM2-G3.html?direct=false" :
-                                "index.html?mapa=false"; // Caso padrão para incluir o parâmetro
+
+    // URLs baseadas no bloco e plataforma
+    const urls = {
+        "MM1-G2": "MM1-G2.html?direct=false",
+        "MM1-G3": "MM1-G3.html?direct=false",
+        "MM1-G4": "MM1-G4.html?direct=false",
+        "MM1-G5": "MM1-G5.html?direct=false",
+        "MM1-G6": "MM1-G6.html?direct=false",
+        "MM1-G7": "MM1-G7.html?direct=false",
+        "MM1-G8": "MM1-G8.html?direct=false",
+        "MM1-G9": "MM1-G9.html?direct=false",
+        "MM2-G1": "MM2-G1.html?direct=false",
+        "MM2-G3": "MM2-G3.html?direct=false"
+    };
+
+    const blocoPlataforma = `${item.bloco}-${item.plataforma}`;
+    a.href = urls[blocoPlataforma] || "index.html?mapa=false"; // Caso padrão
+
     a.className = 'content';
 
     const img = document.createElement('img');
@@ -59,7 +80,7 @@ function addHTML(item) {
     img.onerror = () => {
         const span = document.createElement('span');
         span.textContent = item.empresa;
-        span.className = 'fallback-span'; // Classe para estilização, se necessário
+        span.className = 'fallback-span';
         a.innerHTML = ""; // Limpa o conteúdo atual
         a.appendChild(span); // Adiciona o span
     };
@@ -73,59 +94,33 @@ function addHTML(item) {
 function renderItems(items) {
     content.innerHTML = ""; // Limpa a lista antes de renderizar
     items.forEach(addHTML); // Adiciona cada item
+
+    setTimeout(() => {
+        logSpans(); // Garante a contagem de spans após renderização
+    }, 100); // Timeout para esperar o DOM atualizar
 }
 
-// Carrega os dados ao inicializar
-carregarDados();
-
-
-
-// ----------------  CONTAGEM DE EMPRESAS QUE FALTAM A LOGO ----------------
-
-// Função para contar e listar os spans
+// ---------------- CONTAGEM DE EMPRESAS QUE FALTAM A LOGO ----------------
 function logSpans() {
-    const spans = document.querySelectorAll('span');
+    const spans = document.querySelectorAll('.fallback-span'); // Seleciona spans gerados
     const spanContents = Array.from(spans).map(span => span.textContent);
     console.log('Lista de empresas sem logo:', spanContents);
 }
 
-// Configura um MutationObserver para monitorar mudanças no DOM
-const observer = new MutationObserver((mutationsList, observer) => {
-    // Executa apenas na primeira alteração e depois para o observer
-    logSpans();
-    observer.disconnect(); // Para o observer após a primeira execução
-});
-
-// Inicia o observer observando o corpo da página
-observer.observe(document.body, { childList: true, subtree: true });
-
-// Executa a função inicial após uma pequena espera para garantir que o DOM já tenha sido manipulado
-setTimeout(() => {
-    logSpans();
-    observer.disconnect(); // Para o observer caso o timeout ocorra antes de qualquer alteração
-}, 1000);
-
-
-
+// ---------------- LISTA DE EMPRESAS SEM MAPA ----------------
 function logEmpresasSemMapa() {
-    // Lista de blocos associados a "index.html?mapa=false"
     const blocosSemMapa = [
-        "MM1-CF1", "MM1-CF2", "PP2-G2", "PP2-G3", "PP4-G3", "PP2-G3-G4", 
+        "MM1-CF1", "MM1-CF2", "PP2-G2", "PP2-G3", "PP4-G3", "PP2-G3-G4",
         "PP2-G4", "PP2-G5-G6", "MM1-G10", "MM1-G11", "MM2-PA"
     ];
 
-    // Filtra as empresas sem mapa
-    const empresasSemMapa = itens.filter(item => blocosSemMapa.includes(item.bloco));
-    
-    // Cria uma lista com os nomes e blocos das empresas
-    const detalhesEmpresas = empresasSemMapa.map(item => `${item.bloco} : ${item.empresa}`);
+    const empresasSemMapa = itens.filter(item =>
+        blocosSemMapa.includes(`${item.bloco}-${item.plataforma}`) // Verifica bloco + plataforma
+    );
 
-    // Exibe a contagem e a lista no console
+    const detalhesEmpresas = empresasSemMapa.map(item => `${item.bloco}-${item.plataforma}: ${item.empresa}`);
     console.log('Lista de empresas sem mapa:', detalhesEmpresas);
 }
 
-// Chama a função após carregar os dados
-carregarDados().then(() => logEmpresasSemMapa());
-
-
-// 
+// Carrega os dados ao inicializar
+carregarDados();

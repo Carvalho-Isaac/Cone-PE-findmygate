@@ -48,6 +48,48 @@ inputSearch.oninput = () => {
 };
 
 // Função para adicionar um item ao DOM
+// function addHTML(item) {
+//     const li = document.createElement('li');
+//     li.className = 'empresas';
+
+//     const a = document.createElement('a');
+
+//     // URLs baseadas no bloco e plataforma
+//     const urls = {
+//         "MM1-G2": "MM1-G2.html?direct=false",
+//         "MM1-G3": "MM1-G3.html?direct=false",
+//         "MM1-G4": "MM1-G4.html?direct=false",
+//         "MM1-G5": "MM1-G5.html?direct=false",
+//         "MM1-G6": "MM1-G6.html?direct=false",
+//         "MM1-G7": "MM1-G7.html?direct=false",
+//         "MM1-G8": "MM1-G8.html?direct=false",
+//         "MM1-G9": "MM1-G9.html?direct=false",
+//         "MM2-G1": "MM2-G1.html?direct=false",
+//         "MM2-G3": "MM2-G3.html?direct=false"
+//     };
+
+//     const blocoPlataforma = `${item.bloco}-${item.plataforma}`;
+//     a.href = urls[blocoPlataforma] || "index.html?mapa=false"; // Caso padrão
+
+//     a.className = 'content';
+
+//     const img = document.createElement('img');
+//     img.src = item.imagem;
+//     img.alt = item.empresa;
+
+//     img.onerror = () => {
+//         const span = document.createElement('span');
+//         span.textContent = item.empresa;
+//         span.className = 'fallback-span';
+//         a.innerHTML = ""; // Limpa o conteúdo atual
+//         a.appendChild(span); // Adiciona o span
+//     };
+
+//     a.appendChild(img);
+//     li.appendChild(a);
+//     content.appendChild(li);
+// }
+
 function addHTML(item) {
     const li = document.createElement('li');
     li.className = 'empresas';
@@ -56,27 +98,36 @@ function addHTML(item) {
 
     // URLs baseadas no bloco e plataforma
     const urls = {
-        "MM1-G2": "MM1-G2.html?direct=false",
-        "MM1-G3": "MM1-G3.html?direct=false",
-        "MM1-G4": "MM1-G4.html?direct=false",
-        "MM1-G5": "MM1-G5.html?direct=false",
-        "MM1-G6": "MM1-G6.html?direct=false",
-        "MM1-G7": "MM1-G7.html?direct=false",
-        "MM1-G8": "MM1-G8.html?direct=false",
-        "MM1-G9": "MM1-G9.html?direct=false",
-        "MM2-G1": "MM2-G1.html?direct=false",
-        "MM2-G3": "MM2-G3.html?direct=false"
+        "MM1-G2": "MM1-G2.html",
+        "MM1-G3": "MM1-G3.html",
+        "MM1-G4": "MM1-G4.html",
+        "MM1-G5": "MM1-G5.html",
+        "MM1-G6": "MM1-G6.html",
+        "MM1-G7": "MM1-G7.html",
+        "MM1-G8": "MM1-G8.html",
+        "MM1-G9": "MM1-G9.html",
+        "MM2-G1": "MM2-G1.html",
+        "MM2-G3": "MM2-G3.html"
     };
 
     const blocoPlataforma = `${item.bloco}-${item.plataforma}`;
-    a.href = urls[blocoPlataforma] || "index.html?mapa=false"; // Caso padrão
+    const baseUrl = urls[blocoPlataforma] || "index.html";
 
+    // Adiciona os parâmetros `direct=false` e `imagem`
+    const url = new URL(baseUrl, window.location.origin);
+    url.searchParams.append('direct', 'false');
+    if (item.imagem) {
+        url.searchParams.append('logo', item.logo);
+    }
+
+    a.href = url.toString();
     a.className = 'content';
 
     const img = document.createElement('img');
     img.src = item.imagem;
     img.alt = item.empresa;
 
+    // Fallback para quando a imagem não carrega
     img.onerror = () => {
         const span = document.createElement('span');
         span.textContent = item.empresa;
@@ -89,6 +140,7 @@ function addHTML(item) {
     li.appendChild(a);
     content.appendChild(li);
 }
+
 
 // Função para renderizar os itens
 function renderItems(items) {

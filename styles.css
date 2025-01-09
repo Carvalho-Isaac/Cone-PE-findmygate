@@ -190,14 +190,21 @@ video::-webkit-media-controls-enclosure {
     top: 150px;
     border-radius: 3px;
     text-align: center;
+    align-items: center;
     padding: 10%;
 
     display: none;
 }
 
-.qr-code-img{
-    margin-bottom: 20px;
-    width: 80%;
+#overlay-qr span{
+    text-wrap: nowrap;
+}
+
+.containter-buttons-download{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
 
 .btn-download{

@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     overlayImage.src = overlayImageURL;
 
                     overlayImage.onload = () => {
-                        const logoSizeInModules = Math.floor(moduleCount * 0.25); // 25% do tamanho
+                        const logoSizeInModules = Math.floor(moduleCount * 0.25); // 25% do tamanho]
                         const logoSize = logoSizeInModules * moduleSize;
 
                         const adjustedLogoSize = logoSize % 2 === 0 ? logoSize : logoSize + moduleSize;
@@ -79,9 +79,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                         // Adicionando fundo branco atrás da imagem
                         ctx.fillStyle = "white";
-                        ctx.fillRect(x, y, adjustedLogoSize, adjustedLogoSize);
+                        // ctx.fillRect(x, y, adjustedLogoSize, adjustedLogoSize);
+                        ctx.fillRect(x, y, 72, 72);
 
-                        ctx.drawImage(overlayImage, x, y, adjustedLogoSize, adjustedLogoSize);
+                        // ctx.drawImage(overlayImage, x, y, adjustedLogoSize, adjustedLogoSize);
+                        ctx.drawImage(overlayImage, x, y, 72, 72);
 
                         // Atualizar o SVG
                         const parser = new DOMParser();

@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 .parseFromString(svgText, "image/svg+xml")
                 .querySelectorAll("rect");
 
-            const moduleCount = Math.sqrt(rects.length) - 9; // Número de módulos no QR Code
+            const moduleCount = Math.trunc(Math.sqrt(rects.length) + 11); // Número de módulos no QR Code ; O número de modulos é 37 então o + 11 foi uma gambiarra
             const canvasSize = Math.floor(img.width); // Tamanho do Canvas baseado no SVG
             const moduleSize = canvasSize / moduleCount; // Tamanho de cada módulo
 

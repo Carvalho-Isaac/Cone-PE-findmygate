@@ -67,7 +67,7 @@
     {"empresa": "Unilever", "bloco": "MM1", "plataforma": "G9", "portaria": "portaria-E", "imagem": "assets/imagens/unilever.webp"},
     {"empresa": "Unitrading", "bloco": "MM1", "plataforma": "G4", "portaria": "portaria-B", "imagem": "assets/imagens/unitrading.webp"},
     {"empresa": "Universal Transportes", "bloco": "PP2", "plataforma": "G5/G6", "imagem": "assets/imagens/universal-transportes.webp" },
-    { "empresa": "Via Varejo", "bloco": "MM2", "plataforma": "G1","imagem": "assets/imagens/via-varejo.webp"},
+    {"empresa": "Via Varejo", "bloco": "MM2", "plataforma": "G1","imagem": "assets/imagens/via-varejo.webp"},
     {"empresa": "Vibra", "bloco": "MM1", "plataforma": "CF2", "imagem": "assets/imagens/vibra.webp"},
     {"empresa": "Vibra", "bloco": "MM2", "plataforma": "PA", "imagem": "assets/imagens/vibra.webp"},
     {"empresa": "Wartsila", "bloco": "MM1", "plataforma": "G5", "portaria": "portaria-B", "imagem": "assets/imagens/wartsila.webp"},

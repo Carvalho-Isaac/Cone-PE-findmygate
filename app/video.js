@@ -19,3 +19,22 @@ botao.addEventListener("click", () => {
     containerQR.style.display = "none";
   };
 })
+
+document.addEventListener('DOMContentLoaded', () => {
+  const meuVideo = document.querySelector('.videos'); // Seleciona o vídeo
+  const overlayQR = document.querySelector('#overlay-qr'); // Seleciona o overlay
+
+  function ajustarLarguraOverlay() {
+    // Captura a largura renderizada do vídeo
+    const larguraRenderizada = meuVideo.getBoundingClientRect().width;
+    
+    // Define a largura no overlay
+    overlayQR.style.width = `${larguraRenderizada}px`;
+  }
+
+  // Ajusta após o carregamento completo da página
+  window.addEventListener('load', ajustarLarguraOverlay);
+
+  // Atualiza a largura em caso de redimensionamento
+  window.addEventListener('resize', ajustarLarguraOverlay);
+});

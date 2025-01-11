@@ -107,6 +107,18 @@ a {
     text-wrap: nowrap;
 }
 
+/* ----------------- plataformas ------------------------ */
+
+.body-video{
+
+    width: 100vw;
+    min-height: 100dvh;
+    display: flex;
+    /* align-items: center;
+    text-align: center; */
+    justify-content: center;
+}
+
 .blocos {
     max-width: 100dvw;
     height: 100dvh;
@@ -182,10 +194,8 @@ video::-webkit-media-controls-enclosure {
     outline: none;
 }
 
-#overlay-qr{
+/* #overlay-qr{
     background-color: #e4e4e4d5;
-    width: calc(100vw - 20%);
-    max-width: 432px;
     position: absolute;
     top: 150px;
     border-radius: 3px;
@@ -194,6 +204,19 @@ video::-webkit-media-controls-enclosure {
     padding: 10%;
 
     display: none;
+} */
+
+#overlay-qr {
+    background-color: #e4e4e4d5;
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+    border-radius: 3px;
+    text-align: center;
+    align-items: center;
+    padding: 10%;
+    display: none; /* Controle inicial */
 }
 
 #overlay-qr span{
@@ -205,6 +228,7 @@ video::-webkit-media-controls-enclosure {
     display: flex;
     flex-direction: row;
     gap: 10px;
+    padding-inline: 15%;
 }
 
 .btn-download{

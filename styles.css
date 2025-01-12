@@ -163,6 +163,12 @@ video::-webkit-media-controls-enclosure {
 .link-btn-qr {
     display: flex;
     height: 48px;
+    transition: transform 0.3s;
+}
+
+.link-btn-qr.active .btn-back img {
+    content: url("./assets/closeqr.svg");
+    fill: #e4e4e4;
 }
 
 .btn-back {
@@ -187,6 +193,11 @@ video::-webkit-media-controls-enclosure {
 
 .btn-back span svg {
     fill: var(--primary-white);
+}
+
+.btn-back svg{
+    fill: white;
+    width: 24px;
 }
 
 #qr-generate{

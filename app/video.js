@@ -37,4 +37,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Atualiza a largura em caso de redimensionamento
   window.addEventListener('resize', ajustarLarguraOverlay);
+});;
+
+document.getElementById("qr-generate").addEventListener("click", function () {
+  this.classList.toggle("active");
+});
+
+document.addEventListener("click", (event) => {
+  const overlayQR = document.getElementById("overlay-qr");
+  const botao = document.getElementById("qr-generate");
+
+  // Verifica se o clique foi fora do overlay e do botão
+  if (
+    !overlayQR.contains(event.target) && // Clique fora do overlay
+    !botao.contains(event.target) // Clique fora do botão
+  ) {
+    overlayQR.style.display = "none"; // Esconde o overlay
+    botao.classList.remove("active"); // Remove o estado ativo do botão
+  }
 });

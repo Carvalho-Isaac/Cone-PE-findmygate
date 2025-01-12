@@ -17,6 +17,35 @@ async function carregarDados() {
     }
 }
 
+// inputSearch.oninput = () => {
+//     let filtro = inputSearch.value.toLowerCase();
+
+//     // Remove espaços, pontos e acentos
+//     filtro = filtro.replace(/\s+/g, '-').replace(/\./g, '');
+//     filtro = filtro.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+//     const regex = new RegExp(filtro.replace(/-/g, '[- ]'), 'i'); // Permite hífen ou espaço
+
+//     const itensFiltrados = itens.filter(item => {
+//         const nomeEmpresa = item.empresa.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+//         const pesquisa = item.pesquisa.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+//         const bloco = item.bloco.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+//         const plataforma = item.plataforma.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+//         const portaria = item.portaria
+//             ? item.portaria.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+//             : ""; // Verifica se `portaria` existe e, se não, usa string vazia.
+//         const blocoPlataforma = `${bloco}-${plataforma}`;
+
+//         return (
+//             regex.test(nomeEmpresa) || // Pesquisa no nome da empresa
+//             regex.test(pesquisa) || // Pesquisa na pesquisa
+//             regex.test(bloco) || // Pesquisa no bloco
+//             regex.test(plataforma) || // Pesquisa na plataforma
+//             regex.test(portaria) || // Pesquisa na portaria
+//             regex.test(blocoPlataforma) // Pesquisa no bloco e plataforma combinados
+//         );
+//     });
+
 inputSearch.oninput = () => {
     let filtro = inputSearch.value.toLowerCase();
 
@@ -28,6 +57,9 @@ inputSearch.oninput = () => {
 
     const itensFiltrados = itens.filter(item => {
         const nomeEmpresa = item.empresa.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+        const pesquisa = item.pesquisa
+            ? item.pesquisa.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+            : ""; // Verifica se `pesquisa` existe e, se não, usa string vazia.
         const bloco = item.bloco.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
         const plataforma = item.plataforma.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
         const portaria = item.portaria
@@ -37,6 +69,7 @@ inputSearch.oninput = () => {
 
         return (
             regex.test(nomeEmpresa) || // Pesquisa no nome da empresa
+            regex.test(pesquisa) || // Pesquisa na pesquisa
             regex.test(bloco) || // Pesquisa no bloco
             regex.test(plataforma) || // Pesquisa na plataforma
             regex.test(portaria) || // Pesquisa na portaria
@@ -44,6 +77,7 @@ inputSearch.oninput = () => {
         );
     });
 
+    // Aqui você pode atualizar a interface com os itens filtrados
     renderItems(itensFiltrados);
 };
 

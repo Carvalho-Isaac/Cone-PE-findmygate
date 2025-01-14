@@ -91,6 +91,9 @@ function addHTML(item) {
 
     // URLs baseadas no bloco e plataforma
     const urls = {
+        "ADM-CNDM": "ADM-CNDM.html",
+        "ADM-CONE": "ADM-CONE.html",
+        "ADM-RSTR": "ADM-RSTR.html",
         "MM1-G2": "MM1-G2.html",
         "MM1-G3": "MM1-G3.html",
         "MM1-G4": "MM1-G4.html",

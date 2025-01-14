@@ -1,7 +1,6 @@
 [
-    {"empresa": "ADM - Condomínio", "bloco": "", "plataforma": "", "portaria": "", "imagem": ""},
-    {"empresa": "ADM - CONE", "bloco": "MM1", "plataforma": "G4", "portaria": "", "imagem": ""},
-    {"empresa": "Restaurante", "bloco": "MM1", "plataforma": "G8", "portaria": "portaria-D", "imagem": ""},
+    {"empresa": "ADM - Condomínio", "bloco": "ADM", "plataforma": "CNDM", "portaria": "", "imagem": "assets/imagens/adm-condominio-cone.webp"},
+    {"empresa": "ADM - CONE", "bloco": "ADM", "plataforma": "CONE", "portaria": "", "imagem": "assets/imagens/adm-cone.webp"},
     {"empresa": "APG", "bloco": "MM1", "plataforma": "G8", "portaria": "portaria-D", "imagem": "assets/imagens/apg.webp", "logo": "assets/logos/apg.svg"},
     {"empresa": "Agemar", "bloco": "MM1", "plataforma": "G6", "portaria": "portaria-C", "imagem": "assets/imagens/agemar.webp", "logo": "assets/logos/agemar.png"},
     {"empresa": "AGV", "bloco": "MM1", "plataforma": "G7", "portaria": "portaria-E", "imagem": "assets/imagens/agv.webp", "logo": "assets/logos/agv.png"},
@@ -49,6 +48,7 @@
     {"empresa": "Premier Transportes LTDA", "bloco": "MM1", "plataforma": "G7/G11", "imagem": ""},
     {"empresa": "Prodelog", "bloco": "MM1", "plataforma": "CF2", "imagem": "assets/imagens/prodelog.webp", "logo": "assets/logos/prodelog.png"},
     {"empresa": "Redbull (Forte Log)", "bloco": "MM1", "plataforma": "G6", "portaria": "portaria-C", "imagem": "assets/imagens/forte-log.webp", "logo": "assets/logos/forte-log.png"},
+    {"empresa": "Restaurante", "bloco": "ADM", "plataforma": "RSTR", "portaria": "", "imagem": ""},
     {"empresa": "Rod Transportes", "bloco": "MM1", "plataforma": "CF2", "imagem": "assets/imagens/rod.webp", "logo": "assets/logos/rod.png"},
     {"empresa": "ROTRANS", "bloco": "MM1", "plataforma": "CF2", "imagem": "assets/imagens/rotrans.webp", "logo": "assets/logos/rotrans.png"},
     {"empresa": "Sapore", "bloco": "PP2", "plataforma": "G3/G4", "imagem": "assets/imagens/sapore.webp", "logo": "assets/logos/sapore.png"},

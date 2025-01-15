@@ -18,6 +18,7 @@
     {"empresa": "Coopercarga", "bloco": "MM1", "plataforma": "CF2", "imagem": "assets/imagens/coopercarga.webp", "logo": "assets/logos/coopercarga.png"},
     {"empresa": "Copral", "bloco": "MM1", "plataforma": "CF2", "imagem": "assets/imagens/copral.webp", "logo": "assets/logos/copral.png"},
     {"empresa": "De Santa", "bloco": "MM1", "plataforma": "G7", "portaria": "portaria-E", "imagem": "assets/imagens/de-santa.webp", "logo": "assets/logos/de-santa.png"},
+    {"empresa": "Descarbonize Soluções", "bloco": "MM1", "plataforma": "G6", "portaria": "portaria-C", "imagem": "assets/imagens/descarbonize-solucoes.webp", "logo": "assets/logos/descarbonize-solucoes.png"},
     {"empresa": "Dominalog", "bloco": "PP2", "plataforma": "G4", "portaria": "portaria-B", "imagem": "assets/imagens/dominalog.webp", "logo": "assets/logos/dominalog.png"},
     {"empresa": "Duratex", "bloco": "PP2", "plataforma": "G2", "portaria": "portaria-B", "imagem": "assets/imagens/duratex.webp", "logo": "assets/logos/duratex.png"},
     {"empresa": "Eco Brasil", "bloco": "MM1", "plataforma": "CF1", "imagem": ""},

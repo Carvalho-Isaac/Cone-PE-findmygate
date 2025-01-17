@@ -102,6 +102,7 @@ function addHTML(item) {
         "MM1-G7": "MM1-G7.html",
         "MM1-G8": "MM1-G8.html",
         "MM1-G9": "MM1-G9.html",
+        "MM1-G11": "MM1-G11.html",
         "MM2-G1": "MM2-G1.html",
         "MM2-G3": "MM2-G3.html"
     };
@@ -159,7 +160,7 @@ function logSpans() {
 function logEmpresasSemMapa() {
     const blocosSemMapa = [
         "MM1-CF1", "MM1-CF2", "PP2-G2", "PP2-G3", "PP4-G3", "PP2-G3-G4",
-        "PP2-G4", "PP2-G5-G6", "MM1-G10", "MM1-G11", "MM2-PA"
+        "PP2-G4", "PP2-G5-G6", "MM1-G10", "MM2-PA"
     ];
 
     const empresasSemMapa = itens.filter(item =>

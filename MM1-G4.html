@@ -14,7 +14,7 @@
 
 <body class="body-video">
     <div class="blocos">
-        <div class="container-btn">
+        <div class="container-btn hide-btn">
             <button href="" class="link-btn-qr" id="qr-generate">
                 <div class="btn-back">
                     <img src="assets/qrcode.svg" alt="qr-code icon">
@@ -53,9 +53,9 @@
 
         // Exibe o alerta "Mapa ainda não adicionado" se o parâmetro for 'false'
         if (directQR === 'false') {
-            document.querySelector('.link-btn-back').style.display = 'block';
+            document.querySelector('.hide-btn').style.display = 'block';
         } else {
-            document.querySelector('.link-btn-back').style.display = 'none';
+            document.querySelector('.hide-btn').style.display = 'none';
         }
     </script>
 

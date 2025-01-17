@@ -155,7 +155,7 @@ video::-webkit-media-controls-enclosure {
 }
 
 .link-btn-back {
-    display: none;
+    /* display: none; */
     height: 48px;
 
 }

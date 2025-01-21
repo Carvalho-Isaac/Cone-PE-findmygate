@@ -36,6 +36,7 @@
     {"empresa": "Martin Brower", "bloco": "MM1", "plataforma": "G2", "portaria": "portaria-B", "imagem": "assets/imagens/martin-brower.webp", "logo": "assets/logos/martin-brower.png"},
     {"empresa": "Mec Truck (Oficina)", "bloco": "MM1", "plataforma": "G10", "imagem": "assets/imagens/mec-truck.webp", "logo": "assets/logos/mec-truck.png"},
     {"empresa": "Meli+",  "pesquisa": "Mercado Livre", "bloco": "MM2", "plataforma": "G3", "imagem": "assets/imagens/meli.webp", "logo": "assets/logos/meli.png"},
+    {"empresa": "Mercado Livre",  "pesquisa": "Meli+", "bloco": "MM2", "plataforma": "G3", "imagem": "assets/imagens/mercado-livre.webp", "logo": "assets/logos/mercado-livre.png"},
     {"empresa": "MF Refeições", "bloco": "PP2", "plataforma": "G3/G4", "imagem": ""},
     {"empresa": "Modular", "bloco": "PP2", "plataforma": "G4", "imagem": "assets/imagens/modular.webp", "logo": "assets/logos/modular.png"},
     {"empresa": "Moraes", "bloco": "MM1", "plataforma": "G5", "portaria": "portaria-B", "imagem": "assets/imagens/moraes.webp", "logo": "assets/logos/moraes.png"},

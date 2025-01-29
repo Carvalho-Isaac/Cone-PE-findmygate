@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cone Multimodal - Encontre a plataforma</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/cone-logo.ico">
+
+    <meta name="robots" content="noindex, noimageindex">
+</head>
+
+<body>
+    <header class="head">
+        <nav class="nav">
+            <img class="logo-cone" src="assets/logo-intro-cone.png" alt="Cone Suape">
+            <input class="search" type="text" id="txtBusca" placeholder="OU DIGITE O NOME DA EMPRESA" />
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="tab-empresas">
+                <ul>
+                    <!-- AQUI FICARÃO AS EMPRESAS COM TAGS GERADAS PELO JS  -->
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <script src="app/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const mapaAdicionado = urlParams.get('mapa');
+
+            if (mapaAdicionado === 'false') {
+                alert('Mapa em produção para ser adicionado');
+            } else {
+                const mapaContainer = document.getElementById('mapaContainer');
+                if (mapaContainer) {
+                    mapaContainer.style.display = 'block';
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

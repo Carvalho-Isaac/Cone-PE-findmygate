@@ -159,8 +159,10 @@ function addHTML(item) {
         "MM1-G11": "MM1-G11.html",
         "MM2-G1": "MM2-G1.html",
         "MM2-G3": "MM2-G3.html",
+        "PP2-TRR": "PP2-TRR.html",
         "PP2-G2": "PP2-G2.html",
         "PP2-G3": "PP2-G3.html",
+        "PP2-G3-G4": "PP2-G3-G4.html",
         "PP2-G4": "PP2-G4.html",
         "PP2-G5": "PP2-G5.html",
         "PP2-G5/G6": "PP2-G5-G6.html",
@@ -230,8 +232,7 @@ function logSpans() {
 // ---------------- LISTA DE EMPRESAS SEM MAPA ----------------
 function logEmpresasSemMapa() {
     const blocosSemMapa = [
-        "MM1-CF1", "MM1-G7-G11" ,"MM1-CF2", "PP4-G3", "PP2-G3-G4",
-        "MM1-G10", "MM2-PA"
+        "MM1-CF1", "MM1-G7-G11" ,"MM1-CF2", "MM1-G10", "MM2-PA"
     ];
 
     const empresasSemMapa = itens.filter(item =>

@@ -52,7 +52,7 @@
     {"empresa": "Restaurante", "bloco": "ADM", "plataforma": "RSTR", "portaria": "", "imagem": ""},
     {"empresa": "Rod Transportes", "bloco": "MM1", "plataforma": "CF2", "imagem": "assets/imagens/rod.webp", "logo": "assets/logos/rod.png"},
     {"empresa": "ROTRANS", "bloco": "MM1", "plataforma": "CF2", "imagem": "assets/imagens/rotrans.webp", "logo": "assets/logos/rotrans.png"},
-    {"empresa": "Sapore", "pesquisa": "Restaurante","bloco": "PP2", "plataforma": "G3/G4", "imagem": "assets/imagens/sapore.webp", "logo": "assets/logos/sapore.png"},
+    {"empresa": "Sapore", "pesquisa": "Restaurante","bloco": "PP2", "plataforma": "RSTR", "imagem": "assets/imagens/sapore.webp", "logo": "assets/logos/sapore.png"},
     {"empresa": "Seara", "bloco": "MM1", "plataforma": "CF2", "imagem": "assets/imagens/seara.webp", "logo": "assets/logos/seara.png"},
     {"empresa": "Sirius", "bloco": "PP2",  "plataforma": "", "imagem": "assets/imagens/sirius.webp", "logo": "assets/logos/sirius.png"},
     {"empresa": "Spolier", "bloco": "MM1", "plataforma": "", "imagem": "assets/imagens/spolier.webp", "logo": "assets/logos/spolier.png"},

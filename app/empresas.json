@@ -68,8 +68,8 @@
     {"empresa": "Unitrading", "bloco": "MM1", "plataforma": "G4", "portaria": "portaria-B", "imagem": "assets/imagens/unitrading.webp", "logo": "assets/logos/unitrading.png"},
     {"empresa": "Universal Transportes", "bloco": "PP2", "plataforma": "G5/G6", "imagem": "assets/imagens/universal-transportes.webp", "logo": "assets/logos/universal-transportes.png"},
     {"empresa": "Via Varejo", "bloco": "MM2", "plataforma": "G1","imagem": "assets/imagens/via-varejo.webp", "logo": "assets/logos/via-varejo.png"},
-    {"empresa": "Atendimento Vibra", "pesquisa":"Autoatendimento Auto-atendimento" ,"bloco": "MM1", "plataforma": "CF2", "imagem": "assets/imagens/vibra.webp", "logo": "assets/logos/vibra.png"},
-    {"empresa": "Posto Vibra", "pesquisa":"Posto de Abastecimento", "bloco": "MM2", "plataforma": "PA", "imagem": "assets/imagens/vibra.webp", "logo": "assets/logos/vibra.png"},
+    {"empresa": "Atendimento Vibra", "pesquisa":"Autoatendimento Auto-atendimento" ,"bloco": "MM1", "plataforma": "CF2", "imagem": "assets/imagens/vibra-atdm.webp", "logo": "assets/logos/vibra.png"},
+    {"empresa": "Posto Vibra", "pesquisa":"Posto de Abastecimento", "bloco": "MM2", "plataforma": "PA", "imagem": "assets/imagens/vibra-pa.webp", "logo": "assets/logos/vibra.png"},
     {"empresa": "Wartsila", "bloco": "MM1", "plataforma": "G5", "portaria": "portaria-B", "imagem": "assets/imagens/wartsila.webp", "logo": "assets/logos/wartsila.png"},
     {"empresa": "WMG Rodas - Lagoa", "bloco": "PP2", "plataforma": "G3", "portaria": "portaria-B", "imagem": ""}
 ]

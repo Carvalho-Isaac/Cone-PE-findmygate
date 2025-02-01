@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@710&display=swap');
+
 * {
     --primary-yellow: #ea8501;
     --orange: #d13d00;
@@ -5,19 +7,22 @@
     --primary-white: #e4e4e4;
 
     --size-high-tab: 4rem;
-}
 
-
-*,
-body,
-html {
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: -1px;
 
     /* outline: 1px solid red; */
+}
+
+body,
+html {
+    overflow-x: hidden;
+    width: 100vw;
+    
 }
 
 .head {
@@ -44,10 +49,13 @@ html {
     width: 80%;
     height: 2.5rem;
     margin: .5rem;
-    font-size: 1rem;
     text-align: center;
     border: solid 1px var(--primary-yellow);
     border-radius: 25px 25px 25px 25px;
+}
+
+.search::placeholder{
+    font-size: 16px;
 }
 
 .container {
@@ -105,8 +113,13 @@ a {
 
 .empresas a span {
     line-height: var(--size-high-tab);
-    font-size: 30px;
+    font-size: 25px;
     text-wrap: nowrap;
+    
+}
+
+.ini-span{
+    color: #5b352d;
 }
 
 /* ----------------- plataformas ------------------------ */

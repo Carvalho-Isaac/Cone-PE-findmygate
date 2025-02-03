@@ -23,16 +23,17 @@
         <div class="container">
             <div class="tab-empresas">
                 <ul>
-                     <li class="empresas">
+                    <li class="empresas">
                         <a href="plt1.html" class="content"><span class="fallback-span ini-span">MM1 e MM2</span></a>
                         <button class="qr-index qr-index-1" onclick="toggleQR(1)"></button>
-                     </li>
-                     <li class="empresas">
+                    </li>
+                    <li class="empresas">
                         <a href="plt2.html" class="content"><span class="fallback-span ini-span">PP2</span></a>
                         <button href="" class="qr-index qr-index-2" onclick="toggleQR(2)"></button>
-                     </li>
+                    </li>
                 </ul>
                 <div class="overlay-qr overlay-qr-1">
+                    <span>Plataformas MM1 e MM2</span>
                     <img src="assets/QRCodes/QR-PLT1.svg" alt="QR Code plataformas MM1 e MM2">
                     <span>Baixar Arquivos</span>
                     <div class="containter-buttons-download">
@@ -41,6 +42,7 @@
                     </div>
                 </div>
                 <div class="overlay-qr overlay-qr-2">
+                    <span>Plataformas PP2</span>
                     <img src="assets/QRCodes/QR-PLT2.svg" alt="QR Code Plataformas PP2">
                     <span>Baixar Arquivos</span>
                     <div class="containter-buttons-download">
@@ -54,36 +56,42 @@
 
     <script>
         function toggleQR(index) {
+            let overlays = document.querySelectorAll(".overlay-qr");
+
+            // Fecha todas as outras overlays antes de abrir a nova
+            overlays.forEach(overlay => overlay.style.display = "none");
+
+            // Seleciona a overlay específica
             let overlay = document.querySelector(`.overlay-qr-${index}`);
-        
-            // Alterna entre visível e oculto
-            if (overlay.style.display === "block") {
+
+            // Se já está aberta, fecha. Se não, abre.
+            if (overlay.style.display === "flex") {
                 overlay.style.display = "none";
             } else {
-                overlay.style.display = "block";
-        
-                // Adiciona um event listener ao documento para fechar ao clicar fora
+                overlay.style.display = "flex";
+
+                // Adiciona um event listener para fechar ao clicar fora
                 setTimeout(() => {
                     document.addEventListener("click", closeOverlayOutside);
                 }, 0);
             }
         }
-        
+
         function closeOverlayOutside(event) {
             let overlays = document.querySelectorAll(".overlay-qr");
             let buttons = document.querySelectorAll(".qr-index");
-        
+
             let clickedInsideOverlay = [...overlays].some(overlay => overlay.contains(event.target));
             let clickedOnButton = [...buttons].some(button => button.contains(event.target));
-        
+
             if (!clickedInsideOverlay && !clickedOnButton) {
                 overlays.forEach(overlay => overlay.style.display = "none");
-        
-                // Remove o event listener após fechar
+
+                // Remove o event listener para evitar múltiplas chamadas desnecessárias
                 document.removeEventListener("click", closeOverlayOutside);
             }
         }
-        </script>
+    </script>
 
 </body>
 

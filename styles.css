@@ -147,15 +147,14 @@ a {
     border-radius: 3px;
     text-align: center;
     align-items: center;
-    padding: 10%;
+    padding: 5% 10%;
 
     display: none;
+    flex-direction: column;
 }
 
-.overlay-qr img {
-    image-rendering: pixelated; /* Mantém os pixels nítidos */
-    image-rendering: crisp-edges; /* Alternativa para navegadores modernos */
-    shape-rendering: "crispEdges";
+.overlay-qr-1 span, .overlay-qr-2 span{
+    padding-block: 10px;
 }
 
 

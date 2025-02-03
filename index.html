@@ -23,36 +23,67 @@
         <div class="container">
             <div class="tab-empresas">
                 <ul>
-                    <!-- AQUI FICARÃO AS EMPRESAS COM TAGS GERADAS PELO JS  -->
                      <li class="empresas">
                         <a href="plt1.html" class="content"><span class="fallback-span ini-span">MM1 e MM2</span></a>
+                        <button class="qr-index qr-index-1" onclick="toggleQR(1)"></button>
                      </li>
                      <li class="empresas">
                         <a href="plt2.html" class="content"><span class="fallback-span ini-span">PP2</span></a>
+                        <button href="" class="qr-index qr-index-2" onclick="toggleQR(2)"></button>
                      </li>
-                     
                 </ul>
+                <div class="overlay-qr overlay-qr-1">
+                    <img src="assets/QRCodes/QR-PLT1.svg" alt="QR Code plataformas MM1 e MM2">
+                    <span>Baixar Arquivos</span>
+                    <div class="containter-buttons-download">
+                        <a class="btn-back btn-download" href="assets/QRCodes/QR-PLT1.svg" download>SVG</a>
+                        <a class="btn-back btn-download" href="assets/QRCodes/QR-PLT1.png" download>PNG</a>
+                    </div>
+                </div>
+                <div class="overlay-qr overlay-qr-2">
+                    <img src="assets/QRCodes/QR-PLT2.svg" alt="QR Code Plataformas PP2">
+                    <span>Baixar Arquivos</span>
+                    <div class="containter-buttons-download">
+                        <a class="btn-back btn-download" href="assets/QRCodes/QR-PLT2.svg" download>SVG</a>
+                        <a class="btn-back btn-download" href="assets/QRCodes/QR-PLT2.png" download>PNG</a>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
 
-    <!-- <script src="app/main.js"></script> -->
-
-    <!-- <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const urlParams = new URLSearchParams(window.location.search);
-            const mapaAdicionado = urlParams.get('mapa');
-
-            if (mapaAdicionado === 'false') {
-                alert('Mapa em produção para ser adicionado');
+    <script>
+        function toggleQR(index) {
+            let overlay = document.querySelector(`.overlay-qr-${index}`);
+        
+            // Alterna entre visível e oculto
+            if (overlay.style.display === "block") {
+                overlay.style.display = "none";
             } else {
-                const mapaContainer = document.getElementById('mapaContainer');
-                if (mapaContainer) {
-                    mapaContainer.style.display = 'block';
-                }
+                overlay.style.display = "block";
+        
+                // Adiciona um event listener ao documento para fechar ao clicar fora
+                setTimeout(() => {
+                    document.addEventListener("click", closeOverlayOutside);
+                }, 0);
             }
-        });
-    </script> -->
+        }
+        
+        function closeOverlayOutside(event) {
+            let overlays = document.querySelectorAll(".overlay-qr");
+            let buttons = document.querySelectorAll(".qr-index");
+        
+            let clickedInsideOverlay = [...overlays].some(overlay => overlay.contains(event.target));
+            let clickedOnButton = [...buttons].some(button => button.contains(event.target));
+        
+            if (!clickedInsideOverlay && !clickedOnButton) {
+                overlays.forEach(overlay => overlay.style.display = "none");
+        
+                // Remove o event listener após fechar
+                document.removeEventListener("click", closeOverlayOutside);
+            }
+        }
+        </script>
 
 </body>
 

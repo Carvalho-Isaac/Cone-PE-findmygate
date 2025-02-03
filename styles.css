@@ -118,9 +118,46 @@ a {
     
 }
 
+
+
+/* ----------------- index ------------------------ */
 .ini-span{
     color: #5b352d;
 }
+
+.qr-index{
+    width: 72px;
+    height: 72px;
+
+    background: url('assets/qrcode.svg') no-repeat center;
+    filter: invert(1) sepia(100%) saturate(500%) hue-rotate(330deg);
+    border-radius: 50%;
+    border: none;
+
+    position: absolute;
+    right: 5%;
+}
+
+.overlay-qr {
+    background-color: #e4e4e4d5;
+    position: absolute;
+    top: 55vw;
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+    border-radius: 3px;
+    text-align: center;
+    align-items: center;
+    padding: 10%;
+
+    display: none;
+}
+
+.overlay-qr img {
+    image-rendering: pixelated; /* Mantém os pixels nítidos */
+    image-rendering: crisp-edges; /* Alternativa para navegadores modernos */
+    shape-rendering: "crispEdges";
+}
+
 
 /* ----------------- plataformas ------------------------ */
 
@@ -219,18 +256,6 @@ video::-webkit-media-controls-enclosure {
     border: none;
     outline: none;
 }
-
-/* #overlay-qr{
-    background-color: #e4e4e4d5;
-    position: absolute;
-    top: 150px;
-    border-radius: 3px;
-    text-align: center;
-    align-items: center;
-    padding: 10%;
-
-    display: none;
-} */
 
 #overlay-qr {
     background-color: #e4e4e4d5;

@@ -106,12 +106,12 @@ a {
     background: white;
 }
 
-.empresas a img {
+.tab-empresas li a img {
     height: var(--size-high-tab);
     max-width: 100%;
 }
 
-.empresas a span {
+.tab-empresas li a span {
     line-height: var(--size-high-tab);
     font-size: 25px;
     text-wrap: nowrap;
@@ -121,6 +121,31 @@ a {
 
 
 /* ----------------- index ------------------------ */
+
+.empresas-index {
+    height: var(--size-high-tab);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1rem;
+    /* border-radius: 30px; */
+    /* background: var(--primary-white); */
+}
+
+.empresas-index a {
+    width: calc(100% - 72px);
+    border-radius: 30px;
+    background: var(--primary-white);
+    margin-right: 72px;
+}
+
+.empresas-index a:hover,
+.empresas-index a:active {
+    background: white;
+}
+
 .ini-span{
     color: #5b352d;
 }
@@ -129,13 +154,25 @@ a {
     width: 72px;
     height: 72px;
 
-    background: url('assets/qrcode.svg') no-repeat center;
-    filter: invert(1) sepia(100%) saturate(500%) hue-rotate(330deg);
+    background: var(--primary-white);
     border-radius: 50%;
     border: none;
 
     position: absolute;
-    right: 5%;
+    right: 2.75%;
+}
+
+.qr-index::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background: url('assets/qrcode.svg') no-repeat center;
+    filter: invert(1) sepia(100%) saturate(500%) hue-rotate(330deg);
+    z-index: 1;
 }
 
 .overlay-qr {
@@ -143,7 +180,7 @@ a {
     position: absolute;
     top: 55vw;
     left: 50%;
-    transform: translateX(-50%); /* Centraliza horizontalmente */
+    transform: translateX(-50%);
     border-radius: 3px;
     text-align: center;
     align-items: center;
@@ -151,12 +188,23 @@ a {
 
     display: none;
     flex-direction: column;
+
+    z-index: 2;
 }
 
 .overlay-qr-1 span, .overlay-qr-2 span{
     padding-block: 10px;
 }
 
+.close-qr-index{
+    fill: black;
+    position: absolute;
+    top: -25px;
+    right: 5px;
+
+    z-index: 0;
+
+}
 
 /* ----------------- plataformas ------------------------ */
 

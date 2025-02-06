@@ -224,26 +224,28 @@ function renderItems(items) {
     }, 100); // Timeout para esperar o DOM atualizar
 }
 
-// ---------------- CONTAGEM DE EMPRESAS QUE FALTAM A LOGO ----------------
-function logSpans() {
-    const spans = document.querySelectorAll('.fallback-span'); // Seleciona spans gerados
-    const spanContents = Array.from(spans).map(span => span.textContent);
-    console.log('Lista de empresas sem logo:', spanContents);
-}
-
-// ---------------- LISTA DE EMPRESAS SEM MAPA ----------------
-function logEmpresasSemMapa() {
-    const blocosSemMapa = [
-        "MM1-CF1", "MM1-G7-G11" ,"MM1-CF2", "MM1-G10"
-    ];
-
-    const empresasSemMapa = itens.filter(item =>
-        blocosSemMapa.includes(`${item.bloco}-${item.plataforma}`) // Verifica bloco + plataforma
-    );
-
-    const detalhesEmpresas = empresasSemMapa.map(item => `${item.bloco}-${item.plataforma}: ${item.empresa}`);
-    console.log('Lista de empresas sem mapa:', detalhesEmpresas);
-}
-
 // Carrega os dados ao inicializar
 carregarDados();
+
+
+// ---------------- CONTAGEM DE EMPRESAS QUE FALTAM A LOGO ----------------
+// function logSpans() {
+//     const spans = document.querySelectorAll('.fallback-span'); // Seleciona spans gerados
+//     const spanContents = Array.from(spans).map(span => span.textContent);
+//     console.log('Lista de empresas sem logo:', spanContents);
+// }
+
+// // ---------------- LISTA DE EMPRESAS SEM MAPA ----------------
+// function logEmpresasSemMapa() {
+//     const blocosSemMapa = [
+//         "MM1-CF1","MM1-CF2", "MM1-G10"
+//     ];
+
+//     const empresasSemMapa = itens.filter(item =>
+//         blocosSemMapa.includes(`${item.bloco}-${item.plataforma}`) // Verifica bloco + plataforma
+//     );
+
+//     const detalhesEmpresas = empresasSemMapa.map(item => `${item.bloco}-${item.plataforma}: ${item.empresa}`);
+//     console.log('Lista de empresas sem mapa:', detalhesEmpresas);
+// }
+

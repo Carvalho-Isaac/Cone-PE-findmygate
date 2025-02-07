@@ -41,7 +41,7 @@
     {"empresa": "Nissan", "bloco": "MM1", "plataforma": "G4", "portaria": "portaria-B", "imagem": "assets/imagens/nissan.webp", "logo": "assets/logos/nissan.png"},
     {"empresa": "Paíto Imports", "bloco": "MM1", "plataforma": "G5", "portaria": "portaria-B", "imagem": "assets/imagens/paito-imports.webp", "logo": "assets/logos/paito-imports.png"},
     {"empresa": "Petlove", "bloco": "MM1", "plataforma": "G5", "portaria": "portaria-B", "imagem": "assets/imagens/petlove.webp", "logo": "assets/logos/petlove.png"},
-    {"empresa": "Pioreiro", "bloco": "MM1", "plataforma": "CF2", "imagem": "assets/imagens/pioneiro.webp", "logo": "assets/logos/pioneiro.png"},
+    {"empresa": "Pioreiro", "bloco": "MM1", "plataforma": "CF2", "imagem": "assets/imagens/pioneiro.webp", "logo": "assets/logos/pioneiro.webp"},
     {"empresa": "Prefeitura Cabo G7", "pesquisa": "Prefeitura de Cabo de Santo Agostinho", "bloco": "MM1", "plataforma": "G7", "portaria": "portaria-E", "imagem": "assets/imagens/prefeitura-cabo-g7.webp", "logo": "assets/logos/prefeitura-cabo.webp"},
     {"empresa": "Prefeitura Cabo G11", "pesquisa": "Prefeitura de Cabo de Santo Agostinho", "bloco": "MM1", "plataforma": "G11", "imagem": "assets/imagens/prefeitura-cabo-g11.webp", "logo": "assets/logos/prefeitura-cabo.webp"},
     {"empresa": "Premier Transportes LTDA", "bloco": "MM1", "plataforma": "G7", "imagem": "assets/imagens/premier-transportes.webp", "logo": "assets/logos/premier-transportes.webp"},

@@ -148,6 +148,8 @@ function addHTML(item) {
         "ADM-CNDM": "ADM-CNDM.html",
         "ADM-CONE": "ADM-CONE.html",
         "ADM-RSTR": "ADM-RSTR.html",
+        "MM1-CF1": "MM1-CF1.html",
+        "MM1-CF2": "MM1-CF2.html",
         "MM1-G2": "MM1-G2.html",
         "MM1-G3": "MM1-G3.html",
         "MM1-G4": "MM1-G4.html",
@@ -156,6 +158,7 @@ function addHTML(item) {
         "MM1-G7": "MM1-G7.html",
         "MM1-G8": "MM1-G8.html",
         "MM1-G9": "MM1-G9.html",
+        "MM1-G10": "MM1-G10.html",
         "MM1-G11": "MM1-G11.html",
         "MM2-PA": "MM2-PA.html",
         "MM2-G1": "MM2-G1.html",
@@ -238,7 +241,7 @@ carregarDados();
 // // ---------------- LISTA DE EMPRESAS SEM MAPA ----------------
 // function logEmpresasSemMapa() {
 //     const blocosSemMapa = [
-//         "MM1-CF1","MM1-CF2", "MM1-G10"
+//         
 //     ];
 
 //     const empresasSemMapa = itens.filter(item =>

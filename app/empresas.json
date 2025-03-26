@@ -1,7 +1,7 @@
 [
     {"empresa": "ADM - Condomínio", "bloco": "ADM", "plataforma": "CNDM", "portaria": "", "imagem": "assets/imagens/adm-condominio-cone.webp"},
     {"empresa": "ADM - CONE", "bloco": "ADM", "plataforma": "CONE", "portaria": "", "imagem": "assets/imagens/adm-cone.webp"},
-    {"empresa": "Truck Center", "bloco": "MM1", "plataforma": "G10", "portaria": "", "imagem": "assets/imagens/truck-center.webp", "logo": "assets/logos/truck-center.webp"},
+    {"empresa": "Truck Center", "pesquisa": "Pátio de triagem" ,"bloco": "MM1", "plataforma": "G10", "portaria": "", "imagem": "assets/imagens/truck-center.webp", "logo": "assets/logos/truck-center.webp"},
     {"empresa": "APG", "bloco": "MM1", "plataforma": "G8", "portaria": "portaria-D", "imagem": "assets/imagens/apg.webp", "logo": "assets/logos/apg.svg"},
     {"empresa": "Agemar", "bloco": "MM1", "plataforma": "G6", "portaria": "portaria-C", "imagem": "assets/imagens/agemar.webp", "logo": "assets/logos/agemar.webp"},
     {"empresa": "AGV", "bloco": "MM1", "plataforma": "G7", "portaria": "portaria-E", "imagem": "assets/imagens/agv.webp", "logo": "assets/logos/agv.png"},

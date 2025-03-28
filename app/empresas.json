@@ -1,4 +1,5 @@
 [
+    {"empresa": "evento", "bloco": "MM1", "plataforma": "G7", "portaria": "", "imagem": "assets/imagens/evento.webp"},
     {"empresa": "ADM - Condomínio", "bloco": "ADM", "plataforma": "CNDM", "portaria": "", "imagem": "assets/imagens/adm-condominio-cone.webp"},
     {"empresa": "ADM - CONE", "bloco": "ADM", "plataforma": "CONE", "portaria": "", "imagem": "assets/imagens/adm-cone.webp"},
     {"empresa": "Truck Center", "pesquisa": "Pátio de triagem" ,"bloco": "MM1", "plataforma": "G10", "portaria": "", "imagem": "assets/imagens/truck-center.webp", "logo": "assets/logos/truck-center.webp"},

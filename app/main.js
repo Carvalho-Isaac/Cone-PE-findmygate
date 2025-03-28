@@ -141,6 +141,10 @@ function addHTML(item) {
     const li = document.createElement('li');
     li.className = 'empresas';
 
+    if (item.empresa && item.empresa.toLowerCase() === "evento") {
+        li.classList.add('evento-especial'); // Adiciona a classe CSS
+    }
+
     const a = document.createElement('a');
 
     // URLs baseadas no bloco e plataforma

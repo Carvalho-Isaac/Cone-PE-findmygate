@@ -337,3 +337,6 @@ video::-webkit-media-controls-enclosure {
 #qr-generate:hover{
     cursor: pointer;
 }
+.evento-especial {
+    background: linear-gradient(#F6A500, #E88200) ;
+}

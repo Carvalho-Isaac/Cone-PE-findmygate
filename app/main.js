@@ -161,6 +161,7 @@ function addHTML(item) {
         "MM1-G6": "MM1-G6.html",
         "MM1-G7": "MM1-G7.html",
         "MM1-G8": "MM1-G8.html",
+        "MM1-G8C": "MM1-G8C.html",
         "MM1-G9": "MM1-G9.html",
         "MM1-G10": "MM1-G10.html",
         "MM1-G11": "MM1-G11.html",

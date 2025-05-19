@@ -14,7 +14,7 @@
     {"empresa": "CEPE", "pesquisa": "Companhia Editora de Pernambuco", "bloco": "MM1", "plataforma": "G7", "portaria": "portaria-E", "imagem": "assets/imagens/cepe.webp", "logo": "assets/logos/cepe.webp"},
     {"empresa": "CIAT", "bloco": "MM1", "plataforma": "G6", "portaria": "portaria-C", "imagem": "assets/imagens/ciat.webp", "logo": "assets/logos/ciat.webp"},
     {"empresa": "Comfrio", "bloco": "MM1", "plataforma": "CF1", "imagem": "assets/imagens/comfrio.webp", "logo": "assets/logos/comfrio.png"},
-    {"empresa": "Cone Services 24h", "bloco": "MM1", "plataforma": "G8", "portaria": "portaria-D", "imagem": "assets/imagens/cone-services.webp"},
+    {"empresa": "Cone Services 24h", "pesquisa": "Loja de Conveniência" , "bloco": "MM1", "plataforma": "G8C", "portaria": "portaria-D", "imagem": "assets/imagens/cone-services.webp"},
     {"empresa": "Contatto", "bloco": "MM1", "plataforma": "CF1", "imagem": "assets/imagens/contatto.webp", "logo": "assets/logos/contatto.webp"},
     {"empresa": "Coopercarga", "bloco": "MM1", "plataforma": "CF2", "imagem": "assets/imagens/coopercarga.webp", "logo": "assets/logos/coopercarga.png"},
     {"empresa": "Copral", "bloco": "MM1", "plataforma": "CF2", "imagem": "assets/imagens/copral.webp", "logo": "assets/logos/copral.png"},

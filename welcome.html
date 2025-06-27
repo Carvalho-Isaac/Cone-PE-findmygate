@@ -38,7 +38,7 @@
             transform: translate(-50%, -50%);
         }
 
-                .link-btn-back {
+        .link-btn-back {
             height: 48px;
             position: absolute;
             z-index: 1;
@@ -74,7 +74,7 @@
         }
 
         /* Roda e centraliza no modo retrato */
-        @media screen and (orientation: portrait) {
+        /* @media screen and (orientation: portrait) {
             .video-js {
                 width: 100vh;
                 height: 100vw;
@@ -87,7 +87,7 @@
                 bottom: calc(64px + 5px);
                 top: auto;
             }
-        }
+        } */
     </style>
 </head>
 
@@ -101,7 +101,13 @@
                 INÍCIO</span></div>
     </a>
     <div class="video-container">
-        <video id="my-video" class="video-js" autoplay loop playsinline preload="auto" data-setup='{}'>
+        <video id="my-video" class="video-js" autoplay loop playsinline preload="auto" controls data-setup='{
+    "controlBar": {
+      "children": [
+        "volumePanel",
+        "fullscreenToggle"
+      ]
+    }}'>
             <source src="assets/cone-video-intro.mp4" type="video/mp4" />
             Seu navegador não suporta vídeo HTML5.
         </video>

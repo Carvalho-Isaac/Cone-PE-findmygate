@@ -340,3 +340,34 @@ video::-webkit-media-controls-enclosure {
 .evento-especial {
     background: linear-gradient(#F6A500, #E88200) ;
 }
+
+
+/* --------------------------- */
+
+.empresas-new {
+    height: calc(1.5 * var(--size-high-tab)) ;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    border-radius: 75px;
+    background: linear-gradient(to right, var(--primary-white), #ffff) ;
+    border: solid 2px var(--primary-white);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.empresas-new:hover,
+.empresas-new:active {
+    background: white;
+}
+
+.empresas-new a {
+    width: calc(100% - 72px);
+    height: 100%;
+}
+
+.empresas-new a span {
+color: var(--primary-yellow);
+}

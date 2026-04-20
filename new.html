@@ -69,7 +69,7 @@
                     </a>
                 </li>
                 <li class="empresas-new">
-                    <a href="" class="content" style="display: flex ;align-items: center; gap: 1rem;">
+                    <a href="recomendacoes.html" class="content" style="display: flex ;align-items: center; gap: 1rem;">
                         <svg height="80%" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink">
                             <g clip-path="url(#clip0_4118_241)">
@@ -112,96 +112,6 @@
                 style="transform: scaleY(-1);">
         </div>
     </main>
-
-    <!-- <div class="container">
-            <div class="tab-empresas">
-                <ul>
-                    <li class="empresas-index">
-                        <a href="welcome.html" class="content content-welcome"
-                            style="background-color: transparent; margin: 0; display: flex; justify-content: center; gap: .75em; width: 387px !important;"><span
-                                class="fallback-span ini-span" style="width: 72px;"><svg style="height:100%; vertical-align:middle; max-width: 72px;"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M23.498 6.186c-.273-1.016-1.076-1.817-2.092-2.09C19.37 3.617 12 3.617 12 3.617s-7.37 0-9.407.479c-1.016.273-1.819 1.074-2.092 2.09C0 8.227 0 12.001 0 12.001s0 3.773.501 5.815c.273 1.016 1.076 1.816 2.092 2.09 2.037.479 9.407.479 9.407.479s7.37 0 9.407-.479c1.016-.274 1.819-1.074 2.092-2.09.502-2.042.502-5.815.502-5.815s0-3.774-.502-5.815zM9.753 15.568V8.433l6.432 3.568-6.432 3.567z" />
-                                </svg></span><span class="fallback-span ini-span" style="width: 255px;">VIDEO
-                                INTEGRAÇÃO</span></a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="empresas-index">
-                        <a href="plt1.html" class="content"><span class="fallback-span ini-span">Mapas MM1 e MM2</span></a>
-                        <button class="qr-index qr-index-1" onclick="toggleQR(1)"></button>
-                    </li>
-                    <li class="empresas-index">
-                        <a href="plt2.html" class="content"><span class="fallback-span ini-span">Mapa PP2</span></a>
-                        <button href="" class="qr-index qr-index-2" onclick="toggleQR(2)"></button>
-                    </li>
-                </ul>
-            </div>
-            <div class="overlay-qr overlay-qr-1">
-                <img src="assets/closeqr.svg" alt="close button" class="close-qr-index">
-                <span>Plataformas MM1 e MM2</span>
-                <img src="assets/QRCodes/QR-PLT1.svg" alt="QR Code plataformas MM1 e MM2">
-                <span>Baixar Arquivos</span>
-                <div class="containter-buttons-download">
-                    <a class="btn-back btn-download" href="assets/QRCodes/QR-PLT1.svg" download>SVG</a>
-                    <a class="btn-back btn-download" href="assets/QRCodes/QR-PLT1.png" download>PNG</a>
-                </div>
-            </div>
-            <div class="overlay-qr overlay-qr-2">
-                <img src="assets/closeqr.svg" alt="close button" class="close-qr-index">
-                <span>Plataformas PP2</span>
-                <img src="assets/QRCodes/QR-PLT2.svg" alt="QR Code Plataformas PP2">
-                <span>Baixar Arquivos</span>
-                <div class="containter-buttons-download">
-                    <a class="btn-back btn-download" href="assets/QRCodes/QR-PLT2.svg" download>SVG</a>
-                    <a class="btn-back btn-download" href="assets/QRCodes/QR-PLT2.png" download>PNG</a>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <script>
-        function toggleQR(index) {
-            let overlays = document.querySelectorAll(".overlay-qr");
-
-            // Fecha todas as outras overlays antes de abrir a nova
-            overlays.forEach(overlay => overlay.style.display = "none");
-
-            // Seleciona a overlay específica
-            let overlay = document.querySelector(`.overlay-qr-${index}`);
-
-            // Se já está aberta, fecha. Se não, abre.
-            if (overlay.style.display === "flex") {
-                overlay.style.display = "none";
-            } else {
-                overlay.style.display = "flex";
-
-                // Adiciona um event listener para fechar ao clicar fora
-                setTimeout(() => {
-                    document.addEventListener("click", closeOverlayOutside);
-                }, 0);
-            }
-        }
-
-        function closeOverlayOutside(event) {
-            let overlays = document.querySelectorAll(".overlay-qr");
-            let buttons = document.querySelectorAll(".qr-index");
-            let images = document.querySelectorAll(".overlay-qr img"); // Seleciona todas as imagens dentro da overlay
-
-            let clickedInsideOverlay = [...overlays].some(overlay => overlay.contains(event.target));
-            let clickedOnButton = [...buttons].some(button => button.contains(event.target));
-            let clickedOnImage = [...images].some(img => img.contains(event.target)); // Verifica se clicou na imagem
-
-            if (!clickedInsideOverlay || clickedOnImage) {
-                overlays.forEach(overlay => overlay.style.display = "none");
-
-                // Remove o event listener para evitar múltiplas chamadas desnecessárias
-                document.removeEventListener("click", closeOverlayOutside);
-            }
-        }
-    </script> -->
-
 </body>
 
 </html>

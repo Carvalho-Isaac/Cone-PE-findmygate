@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Cone Multimodal - Tabela de Preços Truck Center</title>
+    <link rel="icon" href="assets/cone-logo.ico" type="image/x-icon" />
+
+    <meta name="robots" content="noindex, noimageindex">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --laranja: #E89507;
+            --marrom: #542F28;
+            --texto: #503B34;
+            --linha-clara: #EDEDED;
+            --linha-escura: #D8D8D8;
+            --amarelo-btn: #ea8501;
+            --laranja-btn: #d13d00;
+            --branco: #e4e4e4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            background: #fff;
+        }
+
+        body {
+            font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                "Helvetica Neue", Arial, sans-serif;
+            color: var(--texto);
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* ---------------- botão INÍCIO ---------------- */
+
+        .link-btn-back {
+            position: fixed;
+            top: 5px;
+            right: 5px;
+            z-index: 10;
+            height: 48px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .btn-back {
+            /* content-box de proposito: reproduz a geometria exata do botao das
+               demais paginas, que nao tem reset de box-sizing. Com border-box o
+               height de 23px engoliria o padding e cortaria o gradiente. */
+            box-sizing: content-box;
+            padding: 12px 20px;
+            background: linear-gradient(to bottom, var(--amarelo-btn), var(--laranja-btn));
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 3px;
+            height: 23px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .25);
+        }
+
+        .btn-back span {
+            color: var(--branco);
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+        }
+
+        .btn-back svg {
+            fill: var(--branco);
+            width: 24px;
+        }
+
+        /* ---------------- faixas amarelas ---------------- */
+
+        .faixa {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .faixa-base {
+            transform: scaleY(-1);
+        }
+
+        .rodape {
+            position: relative;
+        }
+
+        .rodape .marca-cone {
+            position: absolute;
+            right: 5%;
+            bottom: 12%;
+            width: 22%;
+            max-width: 104px;
+            height: auto;
+        }
+
+        /* ---------------- conteúdo ---------------- */
+
+        .pagina {
+            max-width: 560px;
+            margin: 0 auto;
+            padding: 0 4vw;
+        }
+
+        .logo-truck {
+            display: block;
+            width: 58%;
+            max-width: 250px;
+            height: auto;
+            margin: 1.5rem auto 2rem;
+        }
+
+        .bloco+.bloco {
+            margin-top: 3.5rem;
+        }
+
+        h1,
+        h2 {
+            font-weight: 900;
+            color: var(--marrom);
+            text-align: center;
+            letter-spacing: -.5px;
+            line-height: 1.05;
+            text-transform: uppercase;
+            font-size: clamp(25px, 6.6vw, 38px);
+        }
+
+        .subtitulo {
+            display: block;
+            margin-top: .4rem;
+            font-size: clamp(11px, 2.7vw, 15px);
+            font-weight: 700;
+            color: var(--marrom);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: -.2px;
+        }
+
+        /* ---------------- tabela de valores ---------------- */
+
+        .tabela {
+            width: 100%;
+            margin-top: 1.6rem;
+            border-collapse: separate;
+            border-spacing: 0 6px;
+            font-size: clamp(12px, 3.1vw, 17px);
+        }
+
+        .tabela th {
+            background: var(--laranja);
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: .55em .5em;
+            letter-spacing: -.3px;
+        }
+
+        .tabela thead th:first-child {
+            border-radius: 4px 0 0 4px;
+        }
+
+        .tabela thead th:last-child {
+            border-radius: 0 4px 4px 0;
+        }
+
+        .tabela td {
+            padding: .6em .5em;
+            background: var(--linha-clara);
+            color: var(--texto);
+            font-weight: 500;
+        }
+
+        .tabela tbody tr:nth-child(even) td {
+            background: var(--linha-escura);
+        }
+
+        .tabela td:first-child {
+            border-radius: 4px 0 0 4px;
+        }
+
+        .tabela td:last-child {
+            border-radius: 0 4px 4px 0;
+        }
+
+        .col-item {
+            width: 14%;
+            text-align: center;
+        }
+
+        .col-servico {
+            width: 46%;
+            text-align: left;
+            padding-left: .8em;
+        }
+
+        .col-tipo {
+            width: 17%;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        /* a tabela do PPD precisa acomodar "ADICIONAL POR HORA" e "06 HORAS"
+           na mesma linha, entao redistribui as colunas */
+        .tabela--ppd .col-item {
+            width: 12%;
+        }
+
+        .tabela--ppd .col-servico {
+            width: 46%;
+            padding-left: .6em;
+        }
+
+        .tabela--ppd .col-tipo {
+            width: 20%;
+        }
+
+        .tabela--ppd .col-valor {
+            width: 22%;
+            padding-right: .6em;
+        }
+
+        .col-valor {
+            width: 23%;
+            text-align: right;
+            padding-right: .8em;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .tabela td.col-valor {
+            font-weight: 700;
+        }
+
+        /* ---------------- observações ---------------- */
+
+        .faixa-obs {
+            margin: 2.2rem 0 1.2rem;
+            background: var(--laranja);
+            border-radius: 4px;
+            color: #fff;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: -.3px;
+            padding: .5em;
+            font-size: clamp(13px, 3.4vw, 18px);
+        }
+
+        /* prancheta 1: rótulo centralizado acima da caixa */
+        .obs-titulo {
+            text-align: center;
+            font-weight: 900;
+            color: var(--marrom);
+            text-transform: uppercase;
+            font-size: clamp(12px, 3.2vw, 17px);
+            margin: 1.1rem 0 .5rem;
+            letter-spacing: -.3px;
+        }
+
+        .obs-caixa {
+            background: var(--linha-clara);
+            border-radius: 6px;
+            padding: .9em 1em;
+            text-align: center;
+            font-weight: 500;
+            font-size: clamp(11.5px, 3vw, 16px);
+            line-height: 1.45;
+        }
+
+        /* prancheta 2: rótulo à esquerda, descrição à direita */
+        .obs-lista {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .obs-item {
+            display: grid;
+            grid-template-columns: 38% 1fr;
+            align-items: center;
+            gap: .6em;
+            background: var(--linha-clara);
+            border-radius: 4px;
+            padding: .55em .8em;
+        }
+
+        .obs-lista .obs-item:nth-child(even) {
+            background: var(--linha-escura);
+        }
+
+        .obs-rot {
+            font-weight: 700;
+            color: var(--marrom);
+            text-transform: uppercase;
+            text-align: center;
+            font-size: clamp(9.5px, 2.4vw, 13px);
+            line-height: 1.2;
+            letter-spacing: -.2px;
+        }
+
+        .obs-txt {
+            font-weight: 500;
+            font-size: clamp(9.5px, 2.4vw, 13px);
+            line-height: 1.3;
+        }
+
+        @media (max-width: 430px) {
+            .obs-item {
+                grid-template-columns: 1fr;
+                gap: .25em;
+                text-align: center;
+            }
+
+            .obs-txt {
+                text-align: center;
+            }
+        }
+
+        .nota {
+            margin: 2rem 0 2.5rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: clamp(9px, 2.3vw, 12px);
+            color: var(--marrom);
+            line-height: 1.4;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="new.html" class="link-btn-back">
+        <div class="btn-back"><span><svg width="24" height="22" viewBox="0 0 24 22" fill="#e4e4e4"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M7.5 3.5H4.5C3.67031 3.5 3 4.17031 3 5V17C3 17.8297 3.67031 18.5 4.5 18.5H7.5C8.32969 18.5 9 19.1703 9 20C9 20.8297 8.32969 21.5 7.5 21.5H4.5C2.01562 21.5 0 19.4844 0 17V5C0 2.51562 2.01562 0.5 4.5 0.5H7.5C8.32969 0.5 9 1.17031 9 2C9 2.82969 8.32969 3.5 7.5 3.5ZM7.94062 12.0594C7.35469 11.4734 7.35469 10.5219 7.94062 9.93594L13.9406 3.93594C14.5266 3.35 15.4781 3.35 16.0641 3.93594C16.65 4.52188 16.65 5.47344 16.0641 6.05938L12.6234 9.5H22.5C23.3297 9.5 24 10.1703 24 11C24 11.8297 23.3297 12.5 22.5 12.5H12.6234L16.0641 15.9406C16.65 16.5266 16.65 17.4781 16.0641 18.0641C15.4781 18.65 14.5266 18.65 13.9406 18.0641L7.94062 12.0641V12.0594Z" />
+                </svg>
+                INÍCIO</span></div>
+    </a>
+
+    <img class="faixa" src="assets/cone-background-top-bottom.png" alt="" aria-hidden="true">
+
+    <main class="pagina">
+
+        <img class="logo-truck" src="assets/truck-center-logo.png" alt="Truck Center">
+
+        <!-- ============ PRANCHETA 1 - PATIO DE ESTACIONAMENTO PPD ============ -->
+        <section class="bloco">
+            <h1>Tarifa para o Pátio de Estacionamento PPD</h1>
+
+            <table class="tabela tabela--ppd">
+                <thead>
+                    <tr>
+                        <th class="col-item">Item</th>
+                        <th class="col-servico">Serviço</th>
+                        <th class="col-tipo">Período</th>
+                        <th class="col-valor">Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-item">01</td>
+                        <td class="col-servico">ESTACIONAMENTO INICIAL</td>
+                        <td class="col-tipo">06 HORAS</td>
+                        <td class="col-valor">R$ 30,00</td>
+                    </tr>
+                    <tr>
+                        <td class="col-item">02</td>
+                        <td class="col-servico">ADICIONAL POR HORA</td>
+                        <td class="col-tipo">01 HORA</td>
+                        <td class="col-valor">R$ 8,00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="faixa-obs">Observações e condições</p>
+
+            <p class="obs-titulo">Estacionamento inicial</p>
+            <p class="obs-caixa">Tarifa de estacionamento na modalidade de Ponto de Parada e descanso para o primeiro
+                período de 06 (seis) horas</p>
+
+            <p class="obs-titulo">Adicional por hora</p>
+            <p class="obs-caixa">Valor adicional por cada hora após as 6 (seis) horas iniciais.</p>
+
+            <p class="obs-titulo">Tolerância</p>
+            <p class="obs-caixa">45 minutos até o início da cobrança do período inicial</p>
+        </section>
+
+        <!-- ============ PRANCHETA 2 - TABELA DE PRECOS / TRIAGEM SUAPE ============ -->
+        <section class="bloco">
+            <h2>Tabela de Preços<span class="subtitulo">Tarifa de serviços de triagem para acesso a Suape</span></h2>
+
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th class="col-item">Item</th>
+                        <th class="col-servico">Serviço</th>
+                        <th class="col-tipo">Tipo</th>
+                        <th class="col-valor">Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-item">01</td>
+                        <td class="col-servico">TRIAGEM 6 HORAS</td>
+                        <td class="col-tipo">A</td>
+                        <td class="col-valor">R$ 65,00</td>
+                    </tr>
+                    <tr>
+                        <td class="col-item">02</td>
+                        <td class="col-servico">TRIAGEM 6 HORAS</td>
+                        <td class="col-tipo">B</td>
+                        <td class="col-valor">R$ 80,00</td>
+                    </tr>
+                    <tr>
+                        <td class="col-item">03</td>
+                        <td class="col-servico">ADICIONAL POR HORA</td>
+                        <td class="col-tipo">A</td>
+                        <td class="col-valor">R$ 9,00</td>
+                    </tr>
+                    <tr>
+                        <td class="col-item">04</td>
+                        <td class="col-servico">ADICIONAL POR HORA</td>
+                        <td class="col-tipo">B</td>
+                        <td class="col-valor">R$ 9,00</td>
+                    </tr>
+                    <tr>
+                        <td class="col-item">05</td>
+                        <td class="col-servico">DIÁRIA 24 HORAS</td>
+                        <td class="col-tipo">A</td>
+                        <td class="col-valor">R$ 110,00</td>
+                    </tr>
+                    <tr>
+                        <td class="col-item">06</td>
+                        <td class="col-servico">DIÁRIA 24 HORAS</td>
+                        <td class="col-tipo">B</td>
+                        <td class="col-valor">R$ 130,00</td>
+                    </tr>
+                    <tr>
+                        <td class="col-item">07</td>
+                        <td class="col-servico">ADICIONAL DE CARGA PERIGOSA</td>
+                        <td class="col-tipo">A</td>
+                        <td class="col-valor">R$ 15,00</td>
+                    </tr>
+                    <tr>
+                        <td class="col-item">08</td>
+                        <td class="col-servico">ADICIONAL DE CARGA PERIGOSA</td>
+                        <td class="col-tipo">B</td>
+                        <td class="col-valor">R$ 18,00</td>
+                    </tr>
+                    <tr>
+                        <td class="col-item">09</td>
+                        <td class="col-servico">OPERAÇÃO CARROSSEL</td>
+                        <td class="col-tipo">A|B</td>
+                        <td class="col-valor">R$ 65,00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="faixa-obs">Observações e condições</p>
+
+            <div class="obs-lista">
+                <div class="obs-item">
+                    <span class="obs-rot">Triagem 6 horas - Tipo A</span>
+                    <span class="obs-txt">Serviço de triagem para veículos com comprimento até 20 metros, conforme
+                        Portaria 077/2017 de SUAPE, pelo tempo de permanência até 6 horas.</span>
+                </div>
+                <div class="obs-item">
+                    <span class="obs-rot">Triagem 6 horas - Tipo B</span>
+                    <span class="obs-txt">Serviço de triagem para veículos com comprimento acima de 20 metros, conforme
+                        Portaria 077/2017 de SUAPE, pelo tempo de permanência até 6 horas.</span>
+                </div>
+                <div class="obs-item">
+                    <span class="obs-rot">Adicional por hora - Tipo A</span>
+                    <span class="obs-txt">Valor adicional por hora de estadia após as 6 horas iniciais, conforme item
+                        1.</span>
+                </div>
+                <div class="obs-item">
+                    <span class="obs-rot">Adicional por hora - Tipo B</span>
+                    <span class="obs-txt">Valor adicional por hora de estadia após as 6 horas iniciais, conforme item
+                        2.</span>
+                </div>
+                <div class="obs-item">
+                    <span class="obs-rot">Diária 24 horas - Tipo A</span>
+                    <span class="obs-txt">Valor após a hora de estadia após a 13ª (décima terceira) hora adicional,
+                        conforme itens 1 e 3, até 24 horas da entrada no pátio.</span>
+                </div>
+                <div class="obs-item">
+                    <span class="obs-rot">Diária 24 horas - Tipo B</span>
+                    <span class="obs-txt">Valor após a hora de estadia após a 13ª (décima terceira) hora adicional,
+                        conforme itens 2 e 4, até 24 horas da entrada no pátio.</span>
+                </div>
+                <div class="obs-item">
+                    <span class="obs-rot">Adicional de carga perigosa - Tipo A</span>
+                    <span class="obs-txt">Valor adicional à tarifa do item 1, referente a veiculos transportando carga
+                        perigosa e ou inflamável.</span>
+                </div>
+                <div class="obs-item">
+                    <span class="obs-rot">Adicional de carga perigosa - Tipo B</span>
+                    <span class="obs-txt">Valor adicional à tarifa do item 2, referente a veiculos transportando carga
+                        perigosa e ou inflamável.</span>
+                </div>
+                <div class="obs-item">
+                    <span class="obs-rot">Operação carrossel</span>
+                    <span class="obs-txt">Valor referente ao serviço de CARROSSEL, a cada 08 (oito) horas para as
+                        operações nos navios atracados nos cais de SUAPE.</span>
+                </div>
+            </div>
+        </section>
+
+        <p class="nota">*Tarifa para o Pátio de Triagem CONE LOG (CT. 004/2018) 10.08.2026 a 01.08.2027</p>
+    </main>
+
+    <div class="rodape">
+        <img class="faixa faixa-base" src="assets/cone-background-top-bottom.png" alt="" aria-hidden="true">
+        <img class="marca-cone" src="assets/cone-log-marca.png" alt="Cone Log">
+    </div>
+
+</body>
+
+</html>

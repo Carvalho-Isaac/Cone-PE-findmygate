@@ -23,24 +23,14 @@
             flex-direction: column;
         }
 
-        /* circulo laranja atras do icone do Truck Center, para casar com os
-           dois icones anteriores (que sao SVG com o circulo ja embutido) */
-        .empresas-new .icone-circulo {
+        /* logo do Truck Center no lugar do icone: caixa quadrada de 72px, igual
+           ao circulo dos outros dois, com object-fit contain para o logo (que e
+           deitado, 250x148) caber inteiro e centralizado sem distorcer */
+        .empresas-new .icone-logo {
             flex: 0 0 72px;
             width: 72px;
             height: 72px;
-            border-radius: 50%;
-            background: linear-gradient(to top, #FF7F00, #F7AC00);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .empresas-new .icone-circulo img {
-            height: 46px;
-            width: auto;
-            max-width: 80%;
+            object-fit: contain;
         }
     </style>
 </head>
@@ -127,7 +117,7 @@
                 </li>
                 <li class="empresas-new">
                     <a href="truck-center.html" class="content" style="display: flex ;align-items: center; gap: 1rem;">
-                        <span class="icone-circulo"><img src="assets/truck-center-icon.png" alt="Truck Center"></span>
+                        <img class="icone-logo" src="assets/truck-center-logo.png" alt="Truck Center">
                         <div style="display: flex; flex-direction: column; align-items: flex-start;">
                             <span class="fallback-span ini-span" style="line-height: normal; font-size: 24px;">Tabela de Preços</span>
                             <span class="fallback-span ini-span" style="line-height: normal; font-size: 28px;">Truck Center</span>

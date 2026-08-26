@@ -99,17 +99,14 @@
             transform: scaleY(-1);
         }
 
-        .rodape {
-            position: relative;
-        }
-
         .rodape .marca-cone {
-            position: absolute;
-            right: 5%;
-            bottom: 10%;
+            /* fica acima (fora) da faixa base, no fundo branco: o logo e a
+               versao colorida e nao teria contraste sobre o amarelo. */
+            display: block;
             width: 26%;
             max-width: 140px;
             height: auto;
+            margin: 2rem 5% .75rem auto;
         }
 
         /* ---------------- conteúdo ---------------- */
@@ -529,8 +526,8 @@
     </main>
 
     <div class="rodape">
-        <img class="faixa faixa-base" src="assets/cone-background-top-bottom.png" alt="" aria-hidden="true">
         <img class="marca-cone" src="assets/cone-log.png" alt="Cone Log">
+        <img class="faixa faixa-base" src="assets/cone-background-top-bottom.png" alt="" aria-hidden="true">
     </div>
 
 </body>

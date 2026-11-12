@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Cone Multimodal - Estações BiciCone</title>
+    <link rel="icon" href="assets/cone-logo.ico" type="image/x-icon" />
+
+    <meta name="robots" content="noindex, noimageindex">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --laranja: #E89507;
+            --marrom: #5B352D;
+            --texto: #503B34;
+            --linha-clara: #EDEDED;
+            --linha-escura: #D8D8D8;
+            --amarelo-btn: #ea8501;
+            --laranja-btn: #d13d00;
+            --branco: #e4e4e4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            background: #fff;
+        }
+
+        body {
+            font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                "Helvetica Neue", Arial, sans-serif;
+            color: var(--texto);
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* ---------------- botão INÍCIO ---------------- */
+
+        .link-btn-back {
+            position: fixed;
+            top: 5px;
+            right: 5px;
+            z-index: 10;
+            height: 48px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .btn-back {
+            /* content-box de proposito: mesma geometria do botao das demais paginas */
+            box-sizing: content-box;
+            padding: 12px 20px;
+            background: linear-gradient(to bottom, var(--amarelo-btn), var(--laranja-btn));
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 3px;
+            height: 23px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .25);
+        }
+
+        .btn-back span {
+            color: var(--branco);
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+        }
+
+        .btn-back svg {
+            fill: var(--branco);
+            width: 24px;
+        }
+
+        /* ---------------- faixas ---------------- */
+
+        .faixa {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .faixa-base {
+            transform: scaleY(-1);
+        }
+
+        .rodape .marca-cone {
+            /* fica acima (fora) da faixa base, no fundo branco: o logo e a
+               versao colorida e nao teria contraste sobre o amarelo. */
+            display: block;
+            width: 26%;
+            max-width: 140px;
+            height: auto;
+            margin: 2rem 5% .75rem auto;
+        }
+
+        /* ---------------- conteúdo ---------------- */
+
+        .pagina {
+            max-width: 560px;
+            margin: 0 auto;
+            padding: 0 4vw;
+        }
+
+        .selo {
+            display: block;
+            width: 56%;
+            max-width: 240px;
+            height: auto;
+            margin: .6rem auto 1.4rem;
+        }
+
+        .hero {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1.6rem;
+        }
+
+        h1,
+        h2 {
+            font-weight: 900;
+            color: var(--marrom);
+            text-align: center;
+            letter-spacing: -.5px;
+            line-height: 1.1;
+            text-transform: uppercase;
+            font-size: clamp(21px, 5.6vw, 30px);
+        }
+
+        .bloco {
+            margin-top: 2.6rem;
+        }
+
+        .bloco>h1,
+        .bloco>h2 {
+            margin-bottom: 1.1rem;
+        }
+
+        .mapa {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .sub {
+            margin-top: .9rem;
+            text-align: center;
+            font-size: clamp(11.5px, 3.1vw, 15px);
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        /* ---------------- cartões de regras ---------------- */
+
+        .regras {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 2.4rem;
+            /* folga para o icone que sobe 26px acima do cartao */
+            margin-top: 2.2rem;
+        }
+
+        .cartao {
+            background: var(--linha-clara);
+            border-radius: 14px;
+            padding: 2.6rem 1.1rem 1.2rem;
+            position: relative;
+        }
+
+        .cartao .icone {
+            position: absolute;
+            top: -26px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 56px;
+            height: 56px;
+            display: block;
+        }
+
+        .cartao h3 {
+            text-align: center;
+            font-size: clamp(14px, 3.9vw, 18px);
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--marrom);
+            letter-spacing: -.3px;
+            margin-bottom: .8rem;
+        }
+
+        .cartao ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: .6em;
+        }
+
+        .cartao li {
+            position: relative;
+            padding-left: 1.1em;
+            font-size: clamp(11.5px, 3.1vw, 15px);
+            font-weight: 500;
+            line-height: 1.45;
+        }
+
+        .cartao li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: .55em;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--laranja);
+        }
+
+        .cartao strong {
+            font-weight: 700;
+            color: var(--marrom);
+        }
+
+        .cartao--atencao {
+            background: #FBE6E3;
+        }
+
+        .cartao--atencao li::before {
+            background: #C62828;
+        }
+
+        .cartao--atencao h3 {
+            color: #B5281F;
+        }
+
+        .nota {
+            margin-top: 1.8rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: clamp(10px, 2.6vw, 13px);
+            color: var(--marrom);
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html" class="link-btn-back">
+        <div class="btn-back"><span><svg width="24" height="22" viewBox="0 0 24 22" fill="#e4e4e4"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M7.5 3.5H4.5C3.67031 3.5 3 4.17031 3 5V17C3 17.8297 3.67031 18.5 4.5 18.5H7.5C8.32969 18.5 9 19.1703 9 20C9 20.8297 8.32969 21.5 7.5 21.5H4.5C2.01562 21.5 0 19.4844 0 17V5C0 2.51562 2.01562 0.5 4.5 0.5H7.5C8.32969 0.5 9 1.17031 9 2C9 2.82969 8.32969 3.5 7.5 3.5ZM7.94062 12.0594C7.35469 11.4734 7.35469 10.5219 7.94062 9.93594L13.9406 3.93594C14.5266 3.35 15.4781 3.35 16.0641 3.93594C16.65 4.52188 16.65 5.47344 16.0641 6.05938L12.6234 9.5H22.5C23.3297 9.5 24 10.1703 24 11C24 11.8297 23.3297 12.5 22.5 12.5H12.6234L16.0641 15.9406C16.65 16.5266 16.65 17.4781 16.0641 18.0641C15.4781 18.65 14.5266 18.65 13.9406 18.0641L7.94062 12.0641V12.0594Z" />
+                </svg>
+                INÍCIO</span></div>
+    </a>
+
+    <img class="faixa" src="assets/topo-cone.png" alt="" aria-hidden="true">
+
+    <main class="pagina">
+
+        <img class="selo" src="assets/bicicone-selo.png" alt="BiciCone - Regras, utilização e segurança" width="560"
+            height="560">
+
+        <img class="hero" src="assets/bicicone-hero.jpg" alt="Ciclistas na ciclofaixa do Cone Multimodal" width="860"
+            height="349" loading="eager">
+
+        <!-- ============ ESTACOES ============ -->
+        <section class="bloco">
+            <h1>Estações BiciCone</h1>
+
+            <img class="mapa" src="assets/bicicone-mapa.jpg" alt="Mapa das estações BiciCone no condomínio multimodal"
+                width="1000" height="508" loading="lazy">
+
+            <p class="sub">As bicicletas devem ser retiradas e entregues nas <strong>estações sinalizadas</strong>,
+                indicadas de <strong>01</strong> a <strong>08</strong> no mapa.</p>
+        </section>
+
+        <!-- ============ MANUAL DE REGRAS ============ -->
+        <section class="bloco">
+            <h2>Manual de regras</h2>
+
+            <ul class="regras">
+                <li class="cartao">
+                    <svg class="icone" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="gu" x1="32" y1="64" x2="32" y2="0" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#E8A000" />
+                                <stop offset="1" stop-color="#F7C33B" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="32" cy="32" r="32" fill="url(#gu)" />
+                        <g fill="none" stroke="#fff" stroke-width="3.1" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <circle cx="19" cy="41" r="9.5" />
+                            <circle cx="45" cy="41" r="9.5" />
+                            <path d="M19 41l9-16h11l-7 16" />
+                            <path d="M28 25h9" />
+                            <path d="M45 41l-6-17h6" />
+                        </g>
+                    </svg>
+                    <h3>Regras de utilização</h3>
+                    <ul>
+                        <li>A bicicleta é para uso comum dos circulantes, <strong>use com cuidado!</strong></li>
+                        <li>Elas devem ser retiradas e entregues nas <strong>estações sinalizadas</strong>;</li>
+                        <li>Antes de utilizar o equipamento, verifique <strong>freios e estado dos pneus</strong>;</li>
+                        <li>Evite utilizar <strong>equipamentos danificados</strong>. Ao perceber qualquer dano, por
+                            favor, comunicar a portaria mais próxima.</li>
+                    </ul>
+                </li>
+
+                <li class="cartao">
+                    <svg class="icone" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="gs" x1="32" y1="64" x2="32" y2="0" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#D4722A" />
+                                <stop offset="1" stop-color="#F0A128" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="32" cy="32" r="32" fill="url(#gs)" />
+                        <path d="M32 13l15 6.5v12.8C47 43.3 40.6 49.9 32 54c-8.6-4.1-15-10.7-15-21.7V19.5L32 13z"
+                            fill="#fff" />
+                        <path d="M24.5 33.2l5.6 5.6 11-12" fill="none" stroke="#D4722A" stroke-width="4.2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <h3>Regras de segurança</h3>
+                    <ul>
+                        <li>Trafegue apenas na <strong>ciclofaixa</strong>;</li>
+                        <li><strong>É proibido dar carona</strong> na bicicleta;</li>
+                        <li><strong>Não transporte peso</strong> que possa desequilibrar você e a bicicleta;</li>
+                        <li>Respeite a <strong>faixa de pedestre</strong>;</li>
+                        <li>Não realize <strong>manobras indevidas</strong>;</li>
+                        <li><strong>Não use celular ou fone de ouvidos</strong> enquanto pedalar.</li>
+                    </ul>
+                </li>
+
+                <li class="cartao cartao--atencao">
+                    <svg class="icone" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="ga" x1="32" y1="64" x2="32" y2="0" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#B21E16" />
+                                <stop offset="1" stop-color="#E24A3A" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="32" cy="32" r="32" fill="url(#ga)" />
+                        <path d="M32 14.5l18.5 32.5h-37L32 14.5z" fill="#fff" />
+                        <rect x="29.6" y="26" width="4.8" height="12.5" rx="2.4" fill="#B21E16" />
+                        <circle cx="32" cy="42.6" r="2.7" fill="#B21E16" />
+                    </svg>
+                    <h3>Atenção!</h3>
+                    <ul>
+                        <li>É proibido o <strong>tráfego de bicicletas</strong> nas áreas internas das portarias e/ou
+                            fora da área de domínio do condomínio;</li>
+                        <li>Para sua e nossa segurança, as bicicletas são equipadas com <strong>dispositivos GPS e
+                                monitoradas através do CFTV</strong>.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <p class="nota">www.conebr.com &nbsp;·&nbsp; @conebr_ &nbsp;·&nbsp; /company/cone-sa</p>
+    </main>
+
+    <div class="rodape">
+        <img class="marca-cone" src="assets/cone-log.png" alt="Cone Log">
+        <img class="faixa faixa-base" src="assets/topo-cone.png" alt="" aria-hidden="true">
+    </div>
+
+</body>
+
+</html>

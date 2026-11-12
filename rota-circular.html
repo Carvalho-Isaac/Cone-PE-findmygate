@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Cone Multimodal - Rota Circular</title>
+    <link rel="icon" href="assets/cone-logo.ico" type="image/x-icon" />
+
+    <meta name="robots" content="noindex, noimageindex">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --laranja: #E89507;
+            --marrom: #5B352D;
+            --texto: #503B34;
+            --linha-clara: #EDEDED;
+            --linha-escura: #D8D8D8;
+            --creme: #F7ECD6;
+            --amarelo-btn: #ea8501;
+            --laranja-btn: #d13d00;
+            --branco: #e4e4e4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            background: #fff;
+        }
+
+        body {
+            font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                "Helvetica Neue", Arial, sans-serif;
+            color: var(--texto);
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* ---------------- botão INÍCIO ---------------- */
+
+        .link-btn-back {
+            position: fixed;
+            top: 5px;
+            right: 5px;
+            z-index: 10;
+            height: 48px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .btn-back {
+            /* content-box de proposito: mesma geometria do botao das demais paginas */
+            box-sizing: content-box;
+            padding: 12px 20px;
+            background: linear-gradient(to bottom, var(--amarelo-btn), var(--laranja-btn));
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 3px;
+            height: 23px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .25);
+        }
+
+        .btn-back span {
+            color: var(--branco);
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+        }
+
+        .btn-back svg {
+            fill: var(--branco);
+            width: 24px;
+        }
+
+        /* ---------------- faixas ---------------- */
+
+        .faixa {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .faixa-base {
+            transform: scaleY(-1);
+        }
+
+        .rodape .marca-cone {
+            /* fica acima (fora) da faixa base, no fundo branco: o logo e a
+               versao colorida e nao teria contraste sobre o amarelo. */
+            display: block;
+            width: 26%;
+            max-width: 140px;
+            height: auto;
+            margin: 2rem 5% .75rem auto;
+        }
+
+        /* ---------------- conteúdo ---------------- */
+
+        .pagina {
+            max-width: 560px;
+            margin: 0 auto;
+            padding: 0 4vw;
+        }
+
+        .logo-pagina {
+            display: block;
+            width: 82%;
+            max-width: 340px;
+            height: auto;
+            margin: 1rem auto 1.4rem;
+        }
+
+        .hero {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1.6rem;
+        }
+
+        .intro {
+            font-size: clamp(13px, 3.5vw, 17px);
+            font-weight: 500;
+            line-height: 1.5;
+            text-align: center;
+            margin-bottom: .6rem;
+        }
+
+        .intro strong {
+            font-weight: 700;
+            color: var(--marrom);
+        }
+
+        h1,
+        h2 {
+            font-weight: 900;
+            color: var(--marrom);
+            text-align: center;
+            letter-spacing: -.5px;
+            line-height: 1.1;
+            text-transform: uppercase;
+            font-size: clamp(21px, 5.6vw, 30px);
+        }
+
+        .bloco {
+            margin-top: 2.6rem;
+        }
+
+        .bloco>h2,
+        .bloco>h1 {
+            margin-bottom: 1.1rem;
+        }
+
+        /* ---------------- quadro de horários ---------------- */
+
+        .horarios {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        @media (max-width: 400px) {
+            .horarios {
+                grid-template-columns: 1fr;
+                gap: 1.4rem;
+            }
+        }
+
+        .quadro h3 {
+            background: var(--laranja);
+            color: #fff;
+            font-size: clamp(11px, 3vw, 14px);
+            font-weight: 900;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: -.2px;
+            border-radius: 4px;
+            padding: .45em;
+            margin-bottom: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 4px;
+            font-size: clamp(11px, 3vw, 14px);
+        }
+
+        th {
+            background: var(--marrom);
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: .4em .2em;
+            font-size: .88em;
+            letter-spacing: -.2px;
+        }
+
+        thead th:first-child {
+            border-radius: 4px 0 0 4px;
+        }
+
+        thead th:last-child {
+            border-radius: 0 4px 4px 0;
+        }
+
+        td {
+            background: var(--linha-clara);
+            color: var(--texto);
+            font-weight: 500;
+            text-align: center;
+            padding: .45em .2em;
+        }
+
+        tbody tr:nth-child(even) td {
+            background: var(--linha-escura);
+        }
+
+        td:first-child {
+            border-radius: 4px 0 0 4px;
+        }
+
+        td:last-child {
+            border-radius: 0 4px 4px 0;
+        }
+
+        tbody tr:first-child td,
+        tbody tr:last-child td {
+            background: #FBE3C2;
+            font-weight: 700;
+        }
+
+        /* ---------------- dados do percurso ---------------- */
+
+        .dados {
+            list-style: none;
+            margin-top: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .dados li {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: .8em;
+            align-items: center;
+            background: var(--linha-clara);
+            border-radius: 4px;
+            padding: .6em .9em;
+            font-size: clamp(11.5px, 3.1vw, 15px);
+            font-weight: 500;
+        }
+
+        .dados li:nth-child(even) {
+            background: var(--linha-escura);
+        }
+
+        .dados b {
+            font-weight: 900;
+            color: var(--marrom);
+            white-space: nowrap;
+        }
+
+        /* ---------------- mapa e legenda ---------------- */
+
+        .mapa {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .legenda {
+            list-style: none;
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .legenda li {
+            display: flex;
+            align-items: center;
+            gap: .7em;
+            background: var(--linha-clara);
+            border-radius: 4px;
+            padding: .5em .7em;
+            font-size: clamp(11.5px, 3.1vw, 15px);
+            font-weight: 500;
+        }
+
+        .legenda li:nth-child(even) {
+            background: var(--linha-escura);
+        }
+
+        .pino {
+            flex: 0 0 auto;
+            width: 2.1em;
+            height: 2.1em;
+            border-radius: 50%;
+            background: var(--laranja);
+            color: #fff;
+            font-size: .85em;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .legenda li:first-child .pino {
+            background: #C62828;
+        }
+
+        .nota {
+            margin-top: 1.6rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: clamp(10px, 2.6vw, 13px);
+            color: var(--marrom);
+            line-height: 1.5;
+        }
+
+        .nota a {
+            color: var(--laranja);
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html" class="link-btn-back">
+        <div class="btn-back"><span><svg width="24" height="22" viewBox="0 0 24 22" fill="#e4e4e4"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M7.5 3.5H4.5C3.67031 3.5 3 4.17031 3 5V17C3 17.8297 3.67031 18.5 4.5 18.5H7.5C8.32969 18.5 9 19.1703 9 20C9 20.8297 8.32969 21.5 7.5 21.5H4.5C2.01562 21.5 0 19.4844 0 17V5C0 2.51562 2.01562 0.5 4.5 0.5H7.5C8.32969 0.5 9 1.17031 9 2C9 2.82969 8.32969 3.5 7.5 3.5ZM7.94062 12.0594C7.35469 11.4734 7.35469 10.5219 7.94062 9.93594L13.9406 3.93594C14.5266 3.35 15.4781 3.35 16.0641 3.93594C16.65 4.52188 16.65 5.47344 16.0641 6.05938L12.6234 9.5H22.5C23.3297 9.5 24 10.1703 24 11C24 11.8297 23.3297 12.5 22.5 12.5H12.6234L16.0641 15.9406C16.65 16.5266 16.65 17.4781 16.0641 18.0641C15.4781 18.65 14.5266 18.65 13.9406 18.0641L7.94062 12.0641V12.0594Z" />
+                </svg>
+                INÍCIO</span></div>
+    </a>
+
+    <img class="faixa" src="assets/topo-cone.png" alt="" aria-hidden="true">
+
+    <main class="pagina">
+
+        <img class="logo-pagina" src="assets/rota-logo.png" alt="Rota Circular" width="680" height="440">
+
+        <img class="hero" src="assets/rota-hero.jpg" alt="Van da Rota Circular na entrada do Cone Multimodal"
+            width="860" height="443" loading="eager">
+
+        <p class="intro"><strong>Van exclusiva para circulação na área interna do condomínio multimodal, sem
+                custos.</strong></p>
+        <p class="intro">Confira abaixo os dias, horários e rotas que melhor atendem você.</p>
+
+        <!-- ============ DIAS, HORARIOS E ROTAS ============ -->
+        <section class="bloco">
+            <h1>Dias, horários e rotas</h1>
+
+            <div class="horarios">
+                <div class="quadro">
+                    <h3>Segunda à quinta</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Início</th>
+                                <th>Fim</th>
+                                <th>Tempo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>07:50</td><td>08:05</td><td>00:15</td></tr>
+                            <tr><td>11:30</td><td>11:40</td><td>00:10</td></tr>
+                            <tr><td>11:40</td><td>11:50</td><td>00:10</td></tr>
+                            <tr><td>11:50</td><td>12:00</td><td>00:10</td></tr>
+                            <tr><td>12:00</td><td>12:10</td><td>00:10</td></tr>
+                            <tr><td>12:10</td><td>12:20</td><td>00:10</td></tr>
+                            <tr><td>12:20</td><td>12:30</td><td>00:10</td></tr>
+                            <tr><td>12:30</td><td>12:40</td><td>00:10</td></tr>
+                            <tr><td>12:40</td><td>12:50</td><td>00:10</td></tr>
+                            <tr><td>12:50</td><td>13:00</td><td>00:10</td></tr>
+                            <tr><td>16:00</td><td>16:15</td><td>00:15</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="quadro">
+                    <h3>Sexta</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Início</th>
+                                <th>Fim</th>
+                                <th>Tempo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>07:50</td><td>08:05</td><td>00:15</td></tr>
+                            <tr><td>11:30</td><td>11:40</td><td>00:10</td></tr>
+                            <tr><td>11:40</td><td>11:50</td><td>00:10</td></tr>
+                            <tr><td>11:50</td><td>12:00</td><td>00:10</td></tr>
+                            <tr><td>12:00</td><td>12:10</td><td>00:10</td></tr>
+                            <tr><td>12:10</td><td>12:20</td><td>00:10</td></tr>
+                            <tr><td>12:20</td><td>12:30</td><td>00:10</td></tr>
+                            <tr><td>12:30</td><td>12:40</td><td>00:10</td></tr>
+                            <tr><td>12:40</td><td>12:50</td><td>00:10</td></tr>
+                            <tr><td>12:50</td><td>13:00</td><td>00:10</td></tr>
+                            <tr><td>15:00</td><td>15:15</td><td>00:15</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <ul class="dados">
+                <li><span>Percurso total (Rota Vermelha + Amarela)</span><b>3,19 km</b></li>
+                <li><span>Percurso Rota Vermelha</span><b>1,59 km</b></li>
+                <li><span>Percurso Rota Amarela</span><b>1,60 km</b></li>
+                <li><span>Tempo total da rota</span><b>15 min</b></li>
+                <li><span>Velocidade média na rota</span><b>30 a 40 km/h</b></li>
+                <li><span>Tempo total semanal</span><b>10h</b></li>
+            </ul>
+        </section>
+
+        <!-- ============ LOCAIS DE EMBARQUE ============ -->
+        <section class="bloco">
+            <h2>Locais de embarque e desembarque</h2>
+
+            <img class="mapa" src="assets/rota-mapa.jpg" alt="Mapa dos pontos de embarque e desembarque da Rota Circular"
+                width="1000" height="506" loading="lazy">
+
+            <ul class="legenda">
+                <li><span class="pino">A1</span><span>Gate — partida e chegada</span></li>
+                <li><span class="pino">A2</span><span>MM1 Portaria B e Apoio G04</span></li>
+                <li><span class="pino">A3</span><span>MM2 Portaria A — GPA</span></li>
+                <li><span class="pino">A4</span><span>MM2 Portaria B — MELI</span></li>
+                <li><span class="pino">A5</span><span>MM2 Portaria C</span></li>
+                <li><span class="pino">A6</span><span>MM1 Portaria C e Truck Pátio</span></li>
+                <li><span class="pino">A7</span><span>MM1 Portaria E</span></li>
+            </ul>
+        </section>
+
+        <p class="nota">www.conebr.com &nbsp;·&nbsp; @conebr_ &nbsp;·&nbsp; /company/cone-sa</p>
+    </main>
+
+    <div class="rodape">
+        <img class="marca-cone" src="assets/cone-log.png" alt="Cone Log">
+        <img class="faixa faixa-base" src="assets/topo-cone.png" alt="" aria-hidden="true">
+    </div>
+
+</body>
+
+</html>

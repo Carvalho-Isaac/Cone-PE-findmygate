@@ -2,114 +2,464 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cone Multimodal - Encontre a plataforma</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="assets/cone-logo.ico">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Cone Multimodal</title>
+    <link rel="icon" href="assets/cone-logo.ico" type="image/x-icon" />
 
     <meta name="robots" content="noindex, noimageindex">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --marrom: #5B352D;
+            --laranja: #E89507;
+            --cinza: #E4E4E4;
+            --cinza-escuro: #8A7B74;
+            --amarelo-btn: #ea8501;
+            --laranja-btn: #d13d00;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            background: #fff;
+        }
+
+        body {
+            font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                "Helvetica Neue", Arial, sans-serif;
+            color: var(--marrom);
+            -webkit-text-size-adjust: 100%;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ---------------- faixa do topo ---------------- */
+
+        .faixa {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .pagina {
+            flex: 1;
+            width: 100%;
+            max-width: 470px;
+            margin: 0 auto;
+            padding: 0 5vw 2.5rem;
+        }
+
+        @media (min-width: 520px) {
+            .pagina {
+                padding-inline: 24px;
+            }
+        }
+
+        .bem-vindo {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: .25rem auto 2rem;
+        }
+
+        /* ---------------- títulos de seção ---------------- */
+
+        .secao {
+            display: flex;
+            align-items: center;
+            gap: .7em;
+            font-size: clamp(19px, 5.4vw, 26px);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -.5px;
+            color: var(--marrom);
+            margin-bottom: .9rem;
+        }
+
+        .secao::after {
+            content: "";
+            flex: 1;
+            height: 3px;
+            background: var(--marrom);
+            border-radius: 2px;
+        }
+
+        .secao:not(:first-of-type) {
+            margin-top: 2rem;
+        }
+
+        /* ---------------- linhas ---------------- */
+
+        .lista {
+            list-style: none;
+        }
+
+        .item {
+            display: flex;
+            align-items: stretch;
+            gap: 4%;
+            margin-bottom: 1rem;
+        }
+
+        .cartao {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            text-decoration: none;
+            color: var(--marrom);
+            background: var(--cinza);
+            border-radius: 999px;
+            padding: .7em 1em;
+            min-height: 72px;
+            transition: background .15s;
+        }
+
+        .cartao:hover,
+        .cartao:active {
+            background: #efefef;
+        }
+
+        .cartao strong {
+            font-size: clamp(20px, 5.6vw, 27px);
+            font-weight: 900;
+            letter-spacing: -.5px;
+            line-height: 1.05;
+        }
+
+        .cartao span {
+            font-size: clamp(12px, 3.4vw, 16px);
+            font-weight: 500;
+            color: var(--cinza-escuro);
+            line-height: 1.2;
+        }
+
+        /* linhas de vídeo: sem pílula, ícone + rótulo */
+        .cartao-video {
+            flex-direction: row;
+            gap: 1em;
+            background: none;
+            border-radius: 14px;
+            padding: .4em .6em;
+            justify-content: flex-start;
+        }
+
+        .cartao-video:hover,
+        .cartao-video:active {
+            background: #f4f4f4;
+        }
+
+        .cartao-video img {
+            flex: 0 0 auto;
+            width: 30%;
+            max-width: 92px;
+            height: auto;
+        }
+
+        .cartao-video strong {
+            font-size: clamp(17px, 4.8vw, 24px);
+            text-transform: uppercase;
+            text-align: left;
+        }
+
+        /* ---------------- botão de QR ---------------- */
+
+        .btn-qr {
+            flex: 0 0 21%;
+            max-width: 84px;
+            aspect-ratio: 1;
+            border: 0;
+            border-radius: 50%;
+            background: var(--cinza);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 0;
+            transition: background .15s;
+        }
+
+        .btn-qr:hover,
+        .btn-qr:active {
+            background: #efefef;
+        }
+
+        .btn-qr svg {
+            width: 46%;
+            height: auto;
+            fill: #1a1a1a;
+        }
+
+        /* ---------------- informativos ---------------- */
+
+        .informativos {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4%;
+            margin-top: .4rem;
+        }
+
+        .informativos li {
+            flex: 1 1 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .informativos a {
+            display: block;
+            padding: .4rem;
+            border-radius: 12px;
+            transition: background .15s;
+        }
+
+        .informativos a:hover,
+        .informativos a:active {
+            background: #f4f4f4;
+        }
+
+        .informativos img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* ---------------- sobreposição do QR ---------------- */
+
+        .overlay-qr {
+            position: fixed;
+            inset: 0;
+            z-index: 20;
+            background: rgba(40, 25, 20, .55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6vw;
+        }
+
+        .overlay-qr[hidden] {
+            display: none;
+        }
+
+        .painel-qr {
+            background: #fff;
+            border-radius: 18px;
+            padding: 1.3rem 1.3rem 1.1rem;
+            text-align: center;
+            max-width: 320px;
+            width: 100%;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, .3);
+        }
+
+        .painel-qr h3 {
+            font-size: 16px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -.3px;
+            margin-bottom: .8rem;
+            line-height: 1.2;
+        }
+
+        .painel-qr img {
+            display: block;
+            width: 100%;
+            max-width: 230px;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 6px;
+        }
+
+        .painel-qr p {
+            font-size: 13px;
+            font-weight: 700;
+            margin: .9rem 0 .5rem;
+        }
+
+        .baixar {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .baixar a {
+            flex: 1;
+            max-width: 110px;
+            padding: 11px 0;
+            border-radius: 4px;
+            background: linear-gradient(to bottom, var(--amarelo-btn), var(--laranja-btn));
+            color: #fff;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .fechar-qr {
+            display: block;
+            width: 100%;
+            margin-top: .9rem;
+            padding: 6px;
+            border: 0;
+            background: none;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--cinza-escuro);
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 
 <body>
-    <header class="head">
-        <nav class="nav">
-            <img class="logo-cone" src="assets/logo-intro-cone.png" alt="Cone Suape">
-            <!-- <input class="search" type="text" id="txtBusca" placeholder="DIGITE O NOME DA PLATAFORMA" /> -->
-        </nav>
-    </header>
+    <img class="faixa" src="assets/topo-cone.png" alt="" aria-hidden="true">
 
-    <main>
-        <div class="container">
-            <div class="tab-empresas">
-                <ul>
-                    <li class="empresas-index">
-                        <a href="new.html" class="content content-welcome"
-                            style="background-color: transparent; margin: 0; display: flex; justify-content: center; gap: .75em; width: 387px !important;"><span
-                                class="fallback-span ini-span" style="width: 72px;"><svg style="height:100%; vertical-align:middle; max-width: 72px;"
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M23.498 6.186c-.273-1.016-1.076-1.817-2.092-2.09C19.37 3.617 12 3.617 12 3.617s-7.37 0-9.407.479c-1.016.273-1.819 1.074-2.092 2.09C0 8.227 0 12.001 0 12.001s0 3.773.501 5.815c.273 1.016 1.076 1.816 2.092 2.09 2.037.479 9.407.479 9.407.479s7.37 0 9.407-.479c1.016-.274 1.819-1.074 2.092-2.09.502-2.042.502-5.815.502-5.815s0-3.774-.502-5.815zM9.753 15.568V8.433l6.432 3.568-6.432 3.567z" />
-                                </svg></span><span class="fallback-span ini-span" style="width: 255px;">VIDEO
-                                INTEGRAÇÃO</span></a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="empresas-index">
-                        <a href="plt1.html" class="content"><span class="fallback-span ini-span">Mapas MM1 e MM2</span></a>
-                        <button class="qr-index qr-index-1" onclick="toggleQR(1)"></button>
-                    </li>
-                    <li class="empresas-index">
-                        <a href="plt2.html" class="content"><span class="fallback-span ini-span">Mapa PP2</span></a>
-                        <button href="" class="qr-index qr-index-2" onclick="toggleQR(2)"></button>
-                    </li>
-                </ul>
-            </div>
-            <div class="overlay-qr overlay-qr-1">
-                <img src="assets/closeqr.svg" alt="close button" class="close-qr-index">
-                <span>Plataformas MM1 e MM2</span>
-                <img src="assets/QRCodes/QR-PLT1.svg" alt="QR Code plataformas MM1 e MM2">
-                <span>Baixar Arquivos</span>
-                <div class="containter-buttons-download">
-                    <a class="btn-back btn-download" href="assets/QRCodes/QR-PLT1.svg" download>SVG</a>
-                    <a class="btn-back btn-download" href="assets/QRCodes/QR-PLT1.png" download>PNG</a>
-                </div>
-            </div>
-            <div class="overlay-qr overlay-qr-2">
-                <img src="assets/closeqr.svg" alt="close button" class="close-qr-index">
-                <span>Plataformas PP2</span>
-                <img src="assets/QRCodes/QR-PLT2.svg" alt="QR Code Plataformas PP2">
-                <span>Baixar Arquivos</span>
-                <div class="containter-buttons-download">
-                    <a class="btn-back btn-download" href="assets/QRCodes/QR-PLT2.svg" download>SVG</a>
-                    <a class="btn-back btn-download" href="assets/QRCodes/QR-PLT2.png" download>PNG</a>
-                </div>
-            </div>
-        </div>
+    <main class="pagina">
+        <img class="bem-vindo" src="assets/bem-vindo-cone.png" alt="Seja bem vindo ao Cone" width="820" height="287">
+
+        <h2 class="secao">Mapas Cone</h2>
+        <ul class="lista">
+            <li class="item">
+                <a class="cartao" href="plt1.html">
+                    <strong>MM1 e MM2</strong>
+                    <span>SUAPE | PE</span>
+                </a>
+                <button class="btn-qr" type="button" data-qr="PLT1" data-titulo="Mapas MM1 e MM2"
+                    aria-label="Mostrar QR Code dos mapas MM1 e MM2">
+                    <svg viewBox="0 0 29 29" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path
+                            d="M0 0h11v11H0V0zm2 2v7h7V2H2zm2 2h3v3H4V4zM18 0h11v11H18V0zm2 2v7h7V2h-7zm2 2h3v3h-3V4zM0 18h11v11H0V18zm2 2v7h7v-7H2zm2 2h3v3H4v-3zM13 0h2v2h-2V0zm2 2h2v2h-2V2zm-2 2h2v2h-2V4zm2 2h2v3h-2V6zm-2 3h2v2h-2V9zm0 4h2v2h-2v-2zm-9 0h2v2H4v-2zm-4 0h2v2H0v-2zm6 2h2v2H6v-2zm4-2h2v2h-2v-2zm3 4h2v2h-2v-2zm4-4h2v2h-2v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm2 2h2v2h-2v-2zm-4 2h2v2h-2v-2zm-4 0h2v2h-2v-2zm0 4h2v2h-2v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-8 4h2v2h-2v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-11-4h2v2h-2v-2zm0 4h2v2h-2v-2z" />
+                    </svg>
+                </button>
+            </li>
+            <li class="item">
+                <a class="cartao" href="plt2.html">
+                    <strong>PP2</strong>
+                    <span>SUAPE | PE</span>
+                </a>
+                <button class="btn-qr" type="button" data-qr="PLT2" data-titulo="Mapas PP2"
+                    aria-label="Mostrar QR Code dos mapas PP2">
+                    <svg viewBox="0 0 29 29" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path
+                            d="M0 0h11v11H0V0zm2 2v7h7V2H2zm2 2h3v3H4V4zM18 0h11v11H18V0zm2 2v7h7V2h-7zm2 2h3v3h-3V4zM0 18h11v11H0V18zm2 2v7h7v-7H2zm2 2h3v3H4v-3zM13 0h2v2h-2V0zm2 2h2v2h-2V2zm-2 2h2v2h-2V4zm2 2h2v3h-2V6zm-2 3h2v2h-2V9zm0 4h2v2h-2v-2zm-9 0h2v2H4v-2zm-4 0h2v2H0v-2zm6 2h2v2H6v-2zm4-2h2v2h-2v-2zm3 4h2v2h-2v-2zm4-4h2v2h-2v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm2 2h2v2h-2v-2zm-4 2h2v2h-2v-2zm-4 0h2v2h-2v-2zm0 4h2v2h-2v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-8 4h2v2h-2v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-11-4h2v2h-2v-2zm0 4h2v2h-2v-2z" />
+                    </svg>
+                </button>
+            </li>
+        </ul>
+
+        <h2 class="secao">Vídeos</h2>
+        <ul class="lista">
+            <li class="item">
+                <a class="cartao cartao-video" href="welcome.html">
+                    <img src="assets/play-integracao.png" alt="" aria-hidden="true" width="220" height="155">
+                    <strong>Integração</strong>
+                </a>
+                <button class="btn-qr" type="button" data-qr="INTEGRACAO" data-titulo="Vídeo de Integração"
+                    aria-label="Mostrar QR Code do vídeo de integração">
+                    <svg viewBox="0 0 29 29" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path
+                            d="M0 0h11v11H0V0zm2 2v7h7V2H2zm2 2h3v3H4V4zM18 0h11v11H18V0zm2 2v7h7V2h-7zm2 2h3v3h-3V4zM0 18h11v11H0V18zm2 2v7h7v-7H2zm2 2h3v3H4v-3zM13 0h2v2h-2V0zm2 2h2v2h-2V2zm-2 2h2v2h-2V4zm2 2h2v3h-2V6zm-2 3h2v2h-2V9zm0 4h2v2h-2v-2zm-9 0h2v2H4v-2zm-4 0h2v2H0v-2zm6 2h2v2H6v-2zm4-2h2v2h-2v-2zm3 4h2v2h-2v-2zm4-4h2v2h-2v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm2 2h2v2h-2v-2zm-4 2h2v2h-2v-2zm-4 0h2v2h-2v-2zm0 4h2v2h-2v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-8 4h2v2h-2v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-11-4h2v2h-2v-2zm0 4h2v2h-2v-2z" />
+                    </svg>
+                </button>
+            </li>
+            <li class="item">
+                <a class="cartao cartao-video" href="recomendacoes.html">
+                    <img src="assets/play-recomendacoes.png" alt="" aria-hidden="true" width="220" height="155">
+                    <strong>Recomendações</strong>
+                </a>
+                <button class="btn-qr" type="button" data-qr="RECOMENDACOES" data-titulo="Vídeo de Recomendações"
+                    aria-label="Mostrar QR Code do vídeo de recomendações">
+                    <svg viewBox="0 0 29 29" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path
+                            d="M0 0h11v11H0V0zm2 2v7h7V2H2zm2 2h3v3H4V4zM18 0h11v11H18V0zm2 2v7h7V2h-7zm2 2h3v3h-3V4zM0 18h11v11H0V18zm2 2v7h7v-7H2zm2 2h3v3H4v-3zM13 0h2v2h-2V0zm2 2h2v2h-2V2zm-2 2h2v2h-2V4zm2 2h2v3h-2V6zm-2 3h2v2h-2V9zm0 4h2v2h-2v-2zm-9 0h2v2H4v-2zm-4 0h2v2H0v-2zm6 2h2v2H6v-2zm4-2h2v2h-2v-2zm3 4h2v2h-2v-2zm4-4h2v2h-2v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm2 2h2v2h-2v-2zm-4 2h2v2h-2v-2zm-4 0h2v2h-2v-2zm0 4h2v2h-2v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-8 4h2v2h-2v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-11-4h2v2h-2v-2zm0 4h2v2h-2v-2z" />
+                    </svg>
+                </button>
+            </li>
+        </ul>
+
+        <h2 class="secao">Informativos</h2>
+        <ul class="informativos">
+            <li>
+                <a href="truck-center.html" aria-label="Tabela de preços do Truck Center">
+                    <img src="assets/truck-center-logo.png" alt="Truck Center" width="440" height="255">
+                </a>
+            </li>
+            <li>
+                <a href="bicicone.html" aria-label="Estações BiciCone">
+                    <img src="assets/logo-bicicone.png" alt="Estações BiciCone" width="380" height="176">
+                </a>
+            </li>
+            <li>
+                <a href="rota-circular.html" aria-label="Rota Circular">
+                    <img src="assets/logo-rota-circular.png" alt="Rota Circular" width="380" height="246">
+                </a>
+            </li>
+        </ul>
     </main>
 
+    <div class="overlay-qr" id="overlay" hidden>
+        <div class="painel-qr" role="dialog" aria-modal="true" aria-labelledby="qr-titulo">
+            <h3 id="qr-titulo"></h3>
+            <img id="qr-imagem" src="" alt="">
+            <p>Baixar arquivos</p>
+            <div class="baixar">
+                <a id="qr-svg" href="" download>SVG</a>
+                <a id="qr-png" href="" download>PNG</a>
+            </div>
+            <button class="fechar-qr" type="button" id="fechar">Fechar</button>
+        </div>
+    </div>
+
     <script>
-        function toggleQR(index) {
-            let overlays = document.querySelectorAll(".overlay-qr");
+        (function () {
+            var overlay = document.getElementById('overlay');
+            var titulo = document.getElementById('qr-titulo');
+            var imagem = document.getElementById('qr-imagem');
+            var linkSvg = document.getElementById('qr-svg');
+            var linkPng = document.getElementById('qr-png');
 
-            // Fecha todas as outras overlays antes de abrir a nova
-            overlays.forEach(overlay => overlay.style.display = "none");
-
-            // Seleciona a overlay específica
-            let overlay = document.querySelector(`.overlay-qr-${index}`);
-
-            // Se já está aberta, fecha. Se não, abre.
-            if (overlay.style.display === "flex") {
-                overlay.style.display = "none";
-            } else {
-                overlay.style.display = "flex";
-
-                // Adiciona um event listener para fechar ao clicar fora
-                setTimeout(() => {
-                    document.addEventListener("click", closeOverlayOutside);
-                }, 0);
+            function abrir(id, nome) {
+                var base = 'assets/QRCodes/QR-' + id;
+                titulo.textContent = nome;
+                imagem.src = base + '.svg';
+                imagem.alt = 'QR Code — ' + nome;
+                linkSvg.href = base + '.svg';
+                linkPng.href = base + '.png';
+                overlay.hidden = false;
             }
-        }
 
-        function closeOverlayOutside(event) {
-            let overlays = document.querySelectorAll(".overlay-qr");
-            let buttons = document.querySelectorAll(".qr-index");
-            let images = document.querySelectorAll(".overlay-qr img"); // Seleciona todas as imagens dentro da overlay
+            function fechar() { overlay.hidden = true; }
 
-            let clickedInsideOverlay = [...overlays].some(overlay => overlay.contains(event.target));
-            let clickedOnButton = [...buttons].some(button => button.contains(event.target));
-            let clickedOnImage = [...images].some(img => img.contains(event.target)); // Verifica se clicou na imagem
+            document.querySelectorAll('.btn-qr').forEach(function (b) {
+                b.addEventListener('click', function () {
+                    abrir(b.dataset.qr, b.dataset.titulo);
+                });
+            });
 
-            if (!clickedInsideOverlay || clickedOnImage) {
-                overlays.forEach(overlay => overlay.style.display = "none");
-
-                // Remove o event listener para evitar múltiplas chamadas desnecessárias
-                document.removeEventListener("click", closeOverlayOutside);
-            }
-        }
+            document.getElementById('fechar').addEventListener('click', fechar);
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) fechar();
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') fechar();
+            });
+        })();
     </script>
-
 </body>
 
 </html>

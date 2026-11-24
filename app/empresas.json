@@ -6,7 +6,7 @@
     {"empresa": "Agemar", "bloco": "MM1", "plataforma": "G6", "portaria": "portaria-C", "imagem": "assets/imagens/agemar.webp", "logo": "assets/logos/agemar.webp"},
     {"empresa": "AGV", "bloco": "MM1", "plataforma": "G7", "portaria": "portaria-E", "imagem": "assets/imagens/agv.webp", "logo": "assets/logos/agv.png"},
     {"empresa": "ALP/Bessega", "bloco": "MM1", "plataforma": "CF2", "imagem": "assets/imagens/alp.webp", "logo": "assets/logos/alp.svg"},
-    {"empresa": "Aurora", "bloco": "MM1","plataforma": "G2", "portaria": "portaria-B", "imagem": "assets/imagens/aurora.webp", "logo": "assets/logos/aurora.png"},
+    {"empresa": "Aurora", "bloco": "MM2", "plataforma": "G4", "portaria": "portaria-B", "imagem": "assets/imagens/aurora.webp", "logo": "assets/logos/aurora.png"},
     {"empresa": "Autometal", "bloco": "PP2", "plataforma": "G3", "portaria": "portaria-B", "imagem": "assets/imagens/autometal.webp", "logo": "assets/logos/autometal.png"},
     {"empresa": "AutoStrada", "bloco": "MM1", "plataforma": "G7", "portaria": "portaria-E", "imagem": "assets/imagens/autostrada.webp", "logo": "assets/logos/autostrada.png"},
     {"empresa": "BBM Logística", "bloco": "MM1", "plataforma": "G6", "portaria": "portaria-C", "imagem": "assets/imagens/bbm-logistica.webp", "logo": "assets/logos/bbm-logistica.png"},

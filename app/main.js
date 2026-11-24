@@ -168,6 +168,7 @@ function addHTML(item) {
         "MM2-PA": "MM2-PA.html",
         "MM2-G1": "MM2-G1.html",
         "MM2-G3": "MM2-G3.html",
+        "MM2-G4": "MM2-G4.html",
         "PP2-TRR": "PP2-TRR.html",
         "PP2-RSTR": "PP2-RSTR.html",
         "PP2-G2": "PP2-G2.html",
